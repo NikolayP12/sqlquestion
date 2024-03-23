@@ -29,43 +29,79 @@ class qtype_sqlquestion_edit_form extends question_edit_form
 
     protected function definition_inner($mform)
     {
-
         // Agrega el campo para los Conceptos relacionados con el ejercicio.
-        $mform->addElement('textarea', 'relatedconcepts', get_string('relatedconcepts', 'qtype_sqlquestion'));
-        $mform->setType('relatedconcepts', PARAM_TEXT); // No limpiar HTML ya que es contenido que puede incluir código.
-
-        // Agrega el campo para subir un Esquema Relacional (imagen).
-        $mform->addElement(
-            'filepicker',
-            'relationschema',
-            get_string('relationschema', 'qtype_sqlquestion'),
-            null,
-            array('accepted_types' => 'image')
-        );
+        $mform->addElement('textarea', 'relatedconcepts', get_string('relatedconcepts', 'qtype_sqlquestion'), array('rows' => 3, 'cols' => 80));
+        $mform->setType('relatedconcepts', PARAM_TEXT); // Es más seguro y generalmente suficiente.
 
         // Agrega el campo Data para código SQL.
         $mform->addElement('textarea', 'data', get_string('data', 'qtype_sqlquestion'), array('rows' => 15, 'cols' => 80));
-        $mform->setType('data', PARAM_RAW); // No limpiar HTML.
-        $mform->setDefault('data', ' '); // Establece un valor vacio predeterminado.
+        $mform->setType('data', PARAM_RAW); // Permite contenido HTML, asegúrate de sanitizar al mostrar.
 
-        // Agregar el campo para la Solución al ejercicio.
+        // Agrega el campo para la Solución al ejercicio.
         $mform->addElement('textarea', 'solution', get_string('solution', 'qtype_sqlquestion'), array('rows' => 15, 'cols' => 80));
-        $mform->setType('solution', PARAM_RAW); // No limpiar HTML.
-        $mform->setDefault('solution', ' '); // Establece un valor vacio predeterminado.
-
+        $mform->setType('solution', PARAM_TEXT);
     }
 
 
-    protected function get_more_choices_string()
+
+    /*protected function get_more_choices_string()
     {
-    }
+    }*/
 
     protected function data_preprocessing($question)
     {
+        $question = parent::data_preprocessing($question);
+
+        // Verifica si hay opciones previamente guardadas para la pregunta.
+        if (empty($question->options)) {
+            return $question;
+        }
+
+        // Preprocesa 'relatedconcepts' si existe.
+        if (isset($question->options->relatedconcepts)) {
+            $question->relatedconcepts = $question->options->relatedconcepts;
+        }
+
+        // Preprocesa 'data' si existe.
+        if (isset($question->options->data)) {
+            $question->data = $question->options->data;
+        }
+
+        // Preprocesa 'solution' si existe.
+        if (isset($question->options->solution)) {
+            $question->solution = $question->options->solution;
+        }
+
+        return $question;
     }
+
+
 
     public function validation($data, $files)
     {
+        $errors = parent::validation($data, $files);
+        /*
+    - Podria realizarse una validación para que sea obligatorio añadir conceptos relacionados. De momento lo elimino.
+
+    // Validación para 'relatedconcepts'.
+    if (trim($data['relatedconcepts']) == '') {
+        $errors['relatedconcepts'] = get_string('error_relatedconcepts', 'qtype_sqlquestion');
+    }
+    */
+
+        // Validación para 'data' (código SQL).
+        // Validación para asegurarnos de que hay un generador de script.
+        if (trim($data['data']) == '') {
+            $errors['data'] = get_string('error_data', 'error_data_empty');
+        }
+
+        // Validación para 'solution'.
+        if (trim($data['solution']) == '') {
+            $errors['solution'] = get_string('error_solution', 'error_solution_empty');
+        }
+
+        // Devuelve cualquier error encontrado.
+        return $errors;
     }
 
     public function qtype()

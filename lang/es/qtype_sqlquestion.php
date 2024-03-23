@@ -27,6 +27,7 @@ defined('MOODLE_INTERNAL') || die();
 
 $string['pluginname'] = 'SQLab question';
 $string['relatedconcepts'] = 'Conceptos Relacionados';
-$string['relationschema'] = 'Esquema Relacional';
 $string['data'] = 'Código que genera la BD';
+$string['error_data_empty'] = 'El campo data no puede estar vacío';
+$string['error_solution_empty'] = 'El campo solucion no puede estar vacío';
 $string['solution'] = 'Solución';
