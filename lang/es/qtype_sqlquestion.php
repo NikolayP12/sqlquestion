@@ -25,5 +25,8 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$string['plugininstructions'] = 'The Instructions';
 $string['pluginname'] = 'SQLab question';
+$string['relatedconcepts'] = 'Conceptos Relacionados';
+$string['relationschema'] = 'Esquema Relacional';
+$string['data'] = 'Código que genera la BD';
+$string['solution'] = 'Solución';

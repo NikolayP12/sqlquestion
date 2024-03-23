@@ -24,20 +24,52 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-/**
- * sqlquestion question editing form defition.
- *
- * You should override functions as necessary from the parent class located at
- * /question/type/edit_question_form.php.
- */
-class qtype_sqlquestion_edit_form extends question_edit_form {
+class qtype_sqlquestion_edit_form extends question_edit_form
+{
 
-    /**
-     * Returns the question type name.
-     *
-     * @return string The question type name.
-     */
-    public function qtype() {
+    protected function definition_inner($mform)
+    {
+
+        // Agrega el campo para los Conceptos relacionados con el ejercicio.
+        $mform->addElement('textarea', 'relatedconcepts', get_string('relatedconcepts', 'qtype_sqlquestion'));
+        $mform->setType('relatedconcepts', PARAM_TEXT); // No limpiar HTML ya que es contenido que puede incluir código.
+
+        // Agrega el campo para subir un Esquema Relacional (imagen).
+        $mform->addElement(
+            'filepicker',
+            'relationschema',
+            get_string('relationschema', 'qtype_sqlquestion'),
+            null,
+            array('accepted_types' => 'image')
+        );
+
+        // Agrega el campo Data para código SQL.
+        $mform->addElement('textarea', 'data', get_string('data', 'qtype_sqlquestion'), array('rows' => 15, 'cols' => 80));
+        $mform->setType('data', PARAM_RAW); // No limpiar HTML.
+        $mform->setDefault('data', ' '); // Establece un valor vacio predeterminado.
+
+        // Agregar el campo para la Solución al ejercicio.
+        $mform->addElement('textarea', 'solution', get_string('solution', 'qtype_sqlquestion'), array('rows' => 15, 'cols' => 80));
+        $mform->setType('solution', PARAM_RAW); // No limpiar HTML.
+        $mform->setDefault('solution', ' '); // Establece un valor vacio predeterminado.
+
+    }
+
+
+    protected function get_more_choices_string()
+    {
+    }
+
+    protected function data_preprocessing($question)
+    {
+    }
+
+    public function validation($data, $files)
+    {
+    }
+
+    public function qtype()
+    {
         return 'sqlquestion';
     }
 }
