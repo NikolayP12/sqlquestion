@@ -42,12 +42,6 @@ class qtype_sqlquestion_edit_form extends question_edit_form
         $mform->setType('solution', PARAM_TEXT);
     }
 
-
-
-    /*protected function get_more_choices_string()
-    {
-    }*/
-
     protected function data_preprocessing($question)
     {
         $question = parent::data_preprocessing($question);
