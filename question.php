@@ -32,38 +32,16 @@ defined('MOODLE_INTERNAL') || die();
 /**
  * Class that represents a sqlquestion question.
  */
-class qtype_sqlquestion_question extends uestion_graded_by_strategy {
+class qtype_sqlquestion_question extends question_with_responses
+{
 
-    /**
-     * Returns data to be included in the form submission.
-     *
-     * @return array|string.
-     */
-    public function get_expected_data() {
-        return array();
-    }
+    public $responseformat;
+    public $relatedconcepts;
+    public $data;
+    public $solution;
 
-    /**
-     * Returns the data that would need to be submitted to get a correct answer.
-     *
-     * @return array|null Null if it is not possible to compute a correct response.
-     */
-    public function get_correct_response() {
-        return null;
-    }
-
-    /**
-     * Checks whether the user is allowed to be served a particular file.
-     *
-     * @param question_attempt $qa The question attempt being displayed.
-     * @param question_display_options $options The options that control display of the question.
-     * @param string $component The name of the component we are serving files for.
-     * @param string $filearea The name of the file area.
-     * @param array $args the Remaining bits of the file path.
-     * @param bool $forcedownload Whether the user must be forced to download the file.
-     * @return bool True if the user can access this file.
-     */
-    public function check_file_access($qa, $options, $component, $filearea, $args, $forcedownload) {
-        return parent::check_file_access($qa, $options, $component, $filearea, $args, $forcedownload);
+    public function get_format_renderer(moodle_page $page)
+    {
+        return $page->get_renderer('qtype_sqlquestion');
     }
 }
