@@ -50,7 +50,7 @@ class qtype_sqlquestion extends question_type
         }
 
         // Recupera los datos específicos de la pregunta de la base de datos.
-        $options = $DB->get_record('qtype_sqlquestion_options', array('questionid' => $question->id));
+        $options = $DB->get_record('qtype_sqlquestion_options', array('questionid' => $question->id), '*', MUST_EXIST);
 
         // Asigna los datos recuperados a la propiedad 'options' del objeto de la pregunta.
         $question->options->relatedconcepts = $options->relatedconcepts;
@@ -73,7 +73,7 @@ class qtype_sqlquestion extends question_type
         $options->solution = $question->solution;
 
         // Verifica si ya existen opciones para esta pregunta.
-        if ($existing = $DB->get_record('qtype_sqlquestion_options', array('questionid' => $question->id))) {
+        if ($existing = $DB->get_record('qtype_sqlquestion_options', array('questionid' => $question->id), '*', MUST_EXIST)) {
             // Si existen, actualiza la entrada.
             $options->id = $existing->id;
             $DB->update_record('qtype_sqlquestion_options', $options);
@@ -85,6 +85,11 @@ class qtype_sqlquestion extends question_type
 
     protected function initialise_question_instance(question_definition $question, $questiondata)
     {
+        parent::initialise_question_instance($question, $questiondata);
+
+        $question->relatedconcepts = $questiondata->options->relatedconcepts;
+        $question->data = $questiondata->options->data;
+        $question->solution = $questiondata->options->solution;
     }
 
     // Copiado directamente del essay
