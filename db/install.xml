@@ -9,8 +9,8 @@
         <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
         <FIELD NAME="questionid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="Foreign key references question.id."/>
         <FIELD NAME="relatedconcepts" TYPE="text" NOTNULL="false" SEQUENCE="false"/> 
-        <FIELD NAME="data" TYPE="text" NOTNULL="false" SEQUENCE="false"/> 
-        <FIELD NAME="solution" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="data" TYPE="text" NOTNULL="true" SEQUENCE="false"/> 
+        <FIELD NAME="solution" TYPE="text" NOTNULL="true" SEQUENCE="false"/>
       </FIELDS>
       <KEYS>
         <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
