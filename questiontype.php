@@ -73,7 +73,9 @@ class qtype_sqlquestion extends question_type
         $options->solution = $question->solution;
 
         // Verifica si ya existen opciones para esta pregunta.
-        if ($existing = $DB->get_record('qtype_sqlquestion_options', array('questionid' => $question->id), '*', MUST_EXIST)) {
+        $existing = $DB->get_record('qtype_sqlquestion_options', array('questionid' => $question->id));
+
+        if ($existing) {
             // Si existen, actualiza la entrada.
             $options->id = $existing->id;
             $DB->update_record('qtype_sqlquestion_options', $options);

@@ -25,10 +25,16 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$string['pluginname'] = 'SQLab question';
 $string['relatedconcepts'] = 'Related Concepts';
 $string['data'] = 'Code that generates the DB';
 $string['error_data_empty'] = 'Data field can not be empty';
 $string['error_solution_empty'] = 'Solution field can not be empty';
 $string['solution'] = 'Solution';
 $string['privacy:metadata'] = 'The SQL question type plugin does not store any personal data.';
+$string['pluginname'] = 'SQL question';
+$string['pluginname_help'] = 'In response to a question the respondent types a word or a short phrase.';
+$string['pluginname_link'] = 'question/type/sqlquestion';
+$string['pluginnameadding'] = 'Adding a SQL question';
+$string['pluginnameediting'] = 'Editing a SQL question';
+$string['pluginnamesummary'] = 'Allows a response of one or a few words.';
+$string['privacy:metadata'] = 'SQL question type plugin allows question authors to set a solution.';
