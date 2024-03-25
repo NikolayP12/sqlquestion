@@ -31,3 +31,4 @@ $string['data'] = 'Code that generates the DB';
 $string['error_data_empty'] = 'Data field can not be empty';
 $string['error_solution_empty'] = 'Solution field can not be empty';
 $string['solution'] = 'Solution';
+$string['privacy:metadata'] = 'The SQL question type plugin does not store any personal data.';
