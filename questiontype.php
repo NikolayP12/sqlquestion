@@ -24,7 +24,7 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-require_once($CFG->libdir.'/questionlib.php');
+require_once($CFG->libdir . '/questionlib.php');
 
 /**
  * Class that represents a sqlquestion question type.
@@ -34,9 +34,65 @@ require_once($CFG->libdir.'/questionlib.php');
  * of this type. It can also provide the implementation for import and export
  * in various formats.
  */
-class qtype_sqlquestion extends question_type {
+class qtype_sqlquestion extends question_type
+{
 
     // Override functions as necessary from the parent class located at
     // /question/type/questiontype.php.
 
+    public function get_question_options($question)
+    {
+        global $DB;
+
+        // Asegura que el objeto de la pregunta tenga una propiedad 'options'.
+        if (!property_exists($question, 'options')) {
+            $question->options = new stdClass();
+        }
+
+        // Recupera los datos específicos de la pregunta de la base de datos.
+        $options = $DB->get_record('qtype_sqlquestion_options', array('questionid' => $question->id));
+
+        // Asigna los datos recuperados a la propiedad 'options' del objeto de la pregunta.
+        $question->options->relatedconcepts = $options->relatedconcepts;
+        $question->options->data = $options->data;
+        $question->options->solution = $options->solution;
+
+        parent::get_question_options($question);
+    }
+
+    // Metodo para el almacenamiento en la base de datos.
+    public function save_question_options($question)
+    {
+        global $DB;
+
+        // Prepara los datos para ser insertados o actualizados.
+        $options = new stdClass();
+        $options->questionid = $question->id;
+        $options->relatedconcepts = $question->relatedconcepts;
+        $options->data = $question->data;
+        $options->solution = $question->solution;
+
+        // Verifica si ya existen opciones para esta pregunta.
+        if ($existing = $DB->get_record('qtype_sqlquestion_options', array('questionid' => $question->id))) {
+            // Si existen, actualiza la entrada.
+            $options->id = $existing->id;
+            $DB->update_record('qtype_sqlquestion_options', $options);
+        } else {
+            // De lo contrario, inserta una nueva entrada.
+            $DB->insert_record('qtype_sqlquestion_options', $options);
+        }
+    }
+
+    protected function initialise_question_instance(question_definition $question, $questiondata)
+    {
+    }
+
+    // Copiado directamente del essay
+    public function delete_question($questionid, $contextid)
+    {
+        global $DB;
+
+        $DB->delete_records('qtype_sqlquestion_options', array('questionid' => $questionid));
+        parent::delete_question($questionid, $contextid);
+    }
 }
