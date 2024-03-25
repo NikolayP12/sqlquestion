@@ -1,0 +1,27 @@
+.sqlquestion_relatedconcepts {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.sqlquestion_data {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.sqlquestion_solution {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.sqlquestion_heading {
+    font-size: 18px;
+    /* Tamaño de la fuente */
+    color: #005687;
+    /* Color del texto */
+    margin-top: 20px;
+    /* Espacio antes del encabezado */
+    margin-bottom: 10px;
+    /* Espacio después del encabezado */
+    font-weight: bold;
+    /* Negrita para destacar el encabezado */
+}
