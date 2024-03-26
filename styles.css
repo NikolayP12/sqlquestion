@@ -1,3 +1,13 @@
+.qtext {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.qtext p {
+    max-width: 100%;
+    height: auto;
+}
+
 .sqlquestion_relatedconcepts {
     font-weight: bold;
     margin-bottom: 15px;
