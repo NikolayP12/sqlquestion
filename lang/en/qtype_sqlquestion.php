@@ -36,5 +36,5 @@ $string['pluginname_help'] = 'In response to a question the respondent types a w
 $string['pluginname_link'] = 'question/type/sqlquestion';
 $string['pluginnameadding'] = 'Adding a SQL question';
 $string['pluginnameediting'] = 'Editing a SQL question';
-$string['pluginnamesummary'] = 'Allows a response of one or a few words.';
+$string['pluginnamesummary'] = 'In this question the necessary elements for the SQLab plugin will be attached.';
 $string['privacy:metadata'] = 'SQL question type plugin allows question authors to set a solution.';

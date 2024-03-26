@@ -36,5 +36,5 @@ $string['pluginname_help'] = 'En respuesta a una pregunta, el encuestado escribe
 $string['pluginname_link'] = 'question/type/sqlquestion';
 $string['pluginnameadding'] = 'Añadir una pregunta SQL';
 $string['pluginnameediting'] = 'Editar una pregunta SQL';
-$string['pluginnamesummary'] = 'Permite una respuesta de una o pocas palabras';
+$string['pluginnamesummary'] = 'En esta pregunta se adjuntarán los elementos necesarios para el plugin SQLab.';
 $string['privacy:metadata'] =  'El plugin de tipo de pregunta SQL permite a los autores de las preguntas establecer una solucion';
