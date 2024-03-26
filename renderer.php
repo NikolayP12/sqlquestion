@@ -10,7 +10,8 @@ class qtype_sqlquestion_renderer extends qtype_renderer
 
         $question = $qa->get_question();
         $output = '';
-
+        // Para la presentación del enunciado en la visualización de las preguntas del ejercicio.
+        $output .= html_writer::tag('h3', 'Enunciado del ejercicio:', array('class' => 'sqlquestion_heading'));
         $output .= html_writer::tag('div', $question->format_questiontext($qa), array('class' => 'qtext'));
 
         if (!empty($question->relatedconcepts)) {
