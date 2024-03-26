@@ -2,13 +2,11 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-class qtype_sqlquestion_renderer extends plugin_renderer_base
+class qtype_sqlquestion_renderer extends qtype_renderer
 {
 
     public function formulation_and_controls(question_attempt $qa, question_display_options $options)
     {
-        // global $PAGE;
-        // $PAGE->requires->css(new moodle_url('/question/type/sqlquestion/styles.css'));
 
         $question = $qa->get_question();
         $output = '';
