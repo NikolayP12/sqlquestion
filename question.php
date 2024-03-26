@@ -81,7 +81,7 @@ class qtype_sqlquestion_question extends question_graded_automatically
         // Este método debe retornar una matriz con dos elementos: la fracción (entre 0 y 1)
         // de la nota obtenida, y el estado de la pregunta (por ejemplo, question_state::$gradedright).
         // Para preguntas que no se califican automáticamente, la implementación podría ser trivial.
-        return array(0, question_state::$gradedright);
+        return array(1, question_state::$gradedright);
     }
 
     public function get_validation_error(array $response)
@@ -89,6 +89,20 @@ class qtype_sqlquestion_question extends question_graded_automatically
         // Este método debe retornar un string explicando por qué la respuesta dada es inválida,
         // o un string vacío si la respuesta es válida. Para preguntas sin respuestas de usuarios,
         // podría siempre retornar un string vacío.
+        return '';
+    }
+
+    public function is_same_response(array $response1, array $response2)
+    {
+        // Como este tipo de pregunta no recoge respuestas directas, puedes retornar false.
+        // Adapta esta lógica si tu pregunta eventualmente recogerá respuestas.
+        return false;
+    }
+
+    public function summarise_response(array $response)
+    {
+        // Para preguntas que no recogen respuestas, puedes retornar una cadena vacía
+        // o algún resumen estático, según lo que tenga más sentido para tu pregunta.
         return '';
     }
 }
