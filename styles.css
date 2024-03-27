@@ -1,5 +1,4 @@
 .qtext {
-    font-weight: bold;
     margin-bottom: 15px;
 }
 
@@ -13,18 +12,20 @@ p {
     height: auto;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 .sqlquestion_relatedconcepts {
-    font-weight: bold;
     margin-bottom: 15px;
 }
 
 .sqlquestion_data {
-    font-weight: bold;
     margin-bottom: 15px;
 }
 
 .sqlquestion_solution {
-    font-weight: bold;
     margin-bottom: 15px;
 }
 

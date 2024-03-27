@@ -37,6 +37,10 @@ class qtype_sqlquestion_edit_form extends question_edit_form
         $mform->addElement('textarea', 'data', get_string('data', 'qtype_sqlquestion'), array('rows' => 15, 'cols' => 80));
         $mform->setType('data', PARAM_RAW); // Permite contenido HTML, asegúrate de sanitizar al mostrar.
 
+        // Agrega el campo para las Instrucciones del ejercicio.
+        $mform->addElement('textarea', 'instructions', get_string('instructions', 'qtype_sqlquestion'), array('rows' => 15, 'cols' => 80));
+        $mform->setType('instructions', PARAM_TEXT);
+
         // Agrega el campo para la Solución al ejercicio.
         $mform->addElement('textarea', 'solution', get_string('solution', 'qtype_sqlquestion'), array('rows' => 15, 'cols' => 80));
         $mform->setType('solution', PARAM_TEXT);
@@ -59,6 +63,11 @@ class qtype_sqlquestion_edit_form extends question_edit_form
         // Preprocesa 'data' si existe.
         if (isset($question->options->data)) {
             $question->data = $question->options->data;
+        }
+
+        // Preprocesa 'instructions' si existe.
+        if (isset($question->options->instructions)) {
+            $question->instructions = $question->options->instructions;
         }
 
         // Preprocesa 'solution' si existe.
@@ -89,6 +98,10 @@ class qtype_sqlquestion_edit_form extends question_edit_form
             $errors['data'] = get_string('error_data', 'error_data_empty');
         }
 
+        // Validación para 'instructions'.
+        if (trim($data['instructions']) == '') {
+            $errors['instructions'] = get_string('error_instructions', 'error_instructions_empty');
+        }
         // Validación para 'solution'.
         if (trim($data['solution']) == '') {
             $errors['solution'] = get_string('error_solution', 'error_solution_empty');
