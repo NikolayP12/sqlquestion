@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<XMLDB PATH="question/type/sqlquestion/db" VERSION="2024032200" COMMENT="XMLDB file for Moodle question/type/sqlquestion"
+<XMLDB PATH="question/type/sqlquestion/db" VERSION="2024032201" COMMENT="XMLDB file for Moodle question/type/sqlquestion"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="../../../../lib/xmldb/xmldb.xsd"
 >
@@ -9,7 +9,8 @@
         <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
         <FIELD NAME="questionid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="Foreign key references question.id."/>
         <FIELD NAME="relatedconcepts" TYPE="text" NOTNULL="false" SEQUENCE="false"/> 
-        <FIELD NAME="data" TYPE="text" NOTNULL="true" SEQUENCE="false"/> 
+        <FIELD NAME="data" TYPE="text" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="instructions" TYPE="text" NOTNULL="true" SEQUENCE="false"/> 
         <FIELD NAME="solution" TYPE="text" NOTNULL="true" SEQUENCE="false"/>
       </FIELDS>
       <KEYS>
