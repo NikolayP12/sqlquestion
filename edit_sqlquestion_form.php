@@ -43,7 +43,7 @@ class qtype_sqlquestion_edit_form extends question_edit_form
 
         // Agrega el campo para la Solución al ejercicio.
         $mform->addElement('textarea', 'solution', get_string('solution', 'qtype_sqlquestion'), array('rows' => 15, 'cols' => 80));
-        $mform->setType('solution', PARAM_TEXT);
+        $mform->setType('solution', PARAM_RAW);
     }
 
     protected function data_preprocessing($question)
