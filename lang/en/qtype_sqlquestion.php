@@ -27,11 +27,16 @@ defined('MOODLE_INTERNAL') || die();
 
 $string['relatedconcepts'] = 'Related Concepts';
 $string['data'] = 'Code that generates the DB';
+$string['instructions'] = 'Instructions for solving the exercise';
+$string['solution'] = 'Solution';
 $string['error_data_empty'] = 'Data field can not be empty';
 $string['error_instructions_empty'] = 'Instructions field can not be empty';
 $string['error_solution_empty'] = 'Solution field can not be empty';
-$string['instructions'] = 'Instructions for solving the exercise';
-$string['solution'] = 'Solution';
+$string['statement_tittle'] = 'Statement of the exercise:';
+$string['statement_concepts'] = 'Related concepts with the exercise:';
+$string['statement_data'] = 'Script that generate the data base:';
+$string['statement_instructions'] = 'Instructions for solving the exercise:';
+$string['statement_solution'] = 'Solution of the exercise:';
 $string['privacy:metadata'] = 'The SQL question type plugin does not store any personal data.';
 $string['pluginname'] = 'SQL question';
 $string['pluginname_help'] = 'In response to a question the respondent types a word or a short phrase.';

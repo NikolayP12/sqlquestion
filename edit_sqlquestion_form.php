@@ -87,16 +87,17 @@ class qtype_sqlquestion_edit_form extends question_edit_form
         // Validación para 'data' (código SQL).
         // Validación para asegurarnos de que hay un generador de script.
         if (trim($data['data']) == '') {
-            $errors['data'] = get_string('error_data', 'error_data_empty');
+            //$errors['data'] = get_string('error_data', 'error_data_empty');
+            $errors['data'] = get_string('error_data_empty', 'qtype_sqlquestion');
         }
 
         // Validación para 'instructions'.
         if (trim($data['instructions']) == '') {
-            $errors['instructions'] = get_string('error_instructions', 'error_instructions_empty');
+            $errors['instructions'] = get_string('error_instructions_empty', 'qtype_sqlquestion');
         }
         // Validación para 'solution'.
         if (trim($data['solution']) == '') {
-            $errors['solution'] = get_string('error_solution', 'error_solution_empty');
+            $errors['solution'] = get_string('error_solution_empty', 'qtype_sqlquestion');
         }
 
         // Devuelve cualquier error encontrado.
