@@ -78,8 +78,6 @@ class qtype_sqlquestion_edit_form extends question_edit_form
         return $question;
     }
 
-
-
     public function validation($data, $files)
     {
         $errors = parent::validation($data, $files);
