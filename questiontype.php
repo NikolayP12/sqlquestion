@@ -71,7 +71,7 @@ class qtype_sqlquestion extends question_type
         $options->questionid = $question->id;
         $options->relatedconcepts = $question->relatedconcepts;
         $options->data = $question->data;
-        $options->instructions = $options->instructions;
+        $options->instructions = $question->instructions;
         $options->solution = $question->solution;
 
         // Verifica si ya existen opciones para esta pregunta.
