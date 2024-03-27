@@ -55,6 +55,7 @@ class qtype_sqlquestion extends question_type
         // Asigna los datos recuperados a la propiedad 'options' del objeto de la pregunta.
         $question->options->relatedconcepts = $options->relatedconcepts;
         $question->options->data = $options->data;
+        $question->options->instructions = $options->instructions;
         $question->options->solution = $options->solution;
 
         parent::get_question_options($question);
@@ -70,6 +71,7 @@ class qtype_sqlquestion extends question_type
         $options->questionid = $question->id;
         $options->relatedconcepts = $question->relatedconcepts;
         $options->data = $question->data;
+        $options->instructions = $options->instructions;
         $options->solution = $question->solution;
 
         // Verifica si ya existen opciones para esta pregunta.
@@ -91,6 +93,7 @@ class qtype_sqlquestion extends question_type
 
         $question->relatedconcepts = $questiondata->options->relatedconcepts;
         $question->data = $questiondata->options->data;
+        $question->instructions = $questiondata->options->instructions;
         $question->solution = $questiondata->options->solution;
     }
 

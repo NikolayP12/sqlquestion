@@ -83,14 +83,6 @@ class qtype_sqlquestion_edit_form extends question_edit_form
     public function validation($data, $files)
     {
         $errors = parent::validation($data, $files);
-        /*
-    - Podria realizarse una validación para que sea obligatorio añadir conceptos relacionados. De momento lo elimino.
-
-    // Validación para 'relatedconcepts'.
-    if (trim($data['relatedconcepts']) == '') {
-        $errors['relatedconcepts'] = get_string('error_relatedconcepts', 'qtype_sqlquestion');
-    }
-    */
 
         // Validación para 'data' (código SQL).
         // Validación para asegurarnos de que hay un generador de script.
