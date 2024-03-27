@@ -22,7 +22,7 @@ class backup_qtype_sqlquestion_plugin extends backup_qtype_plugin
 
         // Ahora crea las estructuras propias del qtype.
         $sqlquestion = new backup_nested_element('sqlquestion', array('id'), array(
-            'relatedconcepts', 'data', 'solution'
+            'relatedconcepts', 'data', 'instructions', 'solution'
         ));
 
         // Ahora el árbol propio del qtype.

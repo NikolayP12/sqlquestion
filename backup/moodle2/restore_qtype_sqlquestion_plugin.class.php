@@ -19,12 +19,15 @@ class restore_qtype_sqlquestion_plugin extends restore_qtype_plugin
         $data = (object)$data;
         $oldid = $data->id;
 
-        // Asegura que los campos 'data' y 'solution' tengan valores por defecto si son nulos o no están definidos.
+        // Asegura que los campos 'data', instructions y 'solution' tengan valores por defecto si son nulos o no están definidos.
         if (!isset($data->data) || is_null($data->data)) {
-            $data->data = 'Script no presente'; // Establece un valor predeterminado adecuado para 'data'.
+            $data->data = get_string('data_no_present', 'qtype_sqlquestion'); // Establece un valor predeterminado adecuado para 'data'.
+        }
+        if (!isset($data->instructions) || is_null($data->instructions)) {
+            $data->instructions = get_string('intructions_no_present', 'qtype_sqlquestion'); // Establece un valor predeterminado adecuado para 'instructions'.
         }
         if (!isset($data->solution) || is_null($data->solution)) {
-            $data->solution = 'Solución no presente'; // Establece un valor predeterminado adecuado para 'solution'.
+            $data->solution = get_string('solution_no_present', 'qtype_sqlquestion');; // Establece un valor predeterminado adecuado para 'solution'.
         }
 
         // Detecta si la pregunta fue creada o mapeada durante la restauración.
