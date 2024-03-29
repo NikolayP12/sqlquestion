@@ -1,20 +1,33 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+<!-- 
+    XMLDB Definition for custom SQL question type plugin.
+    This file defines the structure of the database tables used by the 'sqlquestion' question type.
+-->
 <XMLDB PATH="question/type/sqlquestion/db" VERSION="2024032201" COMMENT="XMLDB file for Moodle question/type/sqlquestion"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="../../../../lib/xmldb/xmldb.xsd"
 >
   <TABLES>
+    <!-- Definition of the table 'qtype_sqlquestion_options' to store the additional fields for the SQL questions. -->
     <TABLE NAME="qtype_sqlquestion_options" COMMENT="Options for the sql questions">
       <FIELDS>
+        <!-- Primary key for the table. -->
         <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <!-- Foreign key linking back to the core 'question' table. -->
         <FIELD NAME="questionid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="Foreign key references question.id."/>
+        <!-- Optional text field for storing related concepts associated with the question. -->
         <FIELD NAME="relatedconcepts" TYPE="text" NOTNULL="false" SEQUENCE="false"/> 
+        <!-- Required text field for storing the script that will generate the database context for the question. -->
         <FIELD NAME="data" TYPE="text" NOTNULL="true" SEQUENCE="false"/>
+        <!-- Instructions provided to the student for answering the question. -->
         <FIELD NAME="instructions" TYPE="text" NOTNULL="true" SEQUENCE="false"/> 
+        <!-- Required text field where will be provided the SQL question answer. -->
         <FIELD NAME="solution" TYPE="text" NOTNULL="true" SEQUENCE="false"/>
       </FIELDS>
       <KEYS>
+        <!-- Primary key for the table -->
         <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+        <!-- Ensures that each questionid is unique and references an existing question. -->
         <KEY NAME="questionid" TYPE="foreign-unique" FIELDS="questionid" REFTABLE="question" REFFIELDS="id"/>
       </KEYS>
     </TABLE>
