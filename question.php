@@ -24,13 +24,11 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-// For a complete list of base question classes please examine the file
-// /question/type/questionbase.php.
-//
-// Make sure to implement all the abstract methods of the base class.
-
 /**
- * Class that represents a sqlquestion question.
+ * Represents an SQL question.
+ *
+ * This class provides necessary methods to manage SQL questions, including rendering,
+ * response processing, and grading.
  */
 class qtype_sqlquestion_question extends question_graded_automatically
 {
@@ -46,64 +44,106 @@ class qtype_sqlquestion_question extends question_graded_automatically
         return $page->get_renderer('qtype_sqlquestion');
     }
 
+    /**
+     * Returns the data expected by this question type.
+     *
+     * For questions not expecting user input, returns an empty array.
+     *
+     * @return array The expected data.
+     */
     public function get_expected_data()
     {
-        // Este método debe retornar un array describiendo los datos que espera tu pregunta.
-        // Por ejemplo, si tu pregunta no espera entrada del usuario (como parece ser el caso),
-        // este array puede estar vacío.
         return array();
     }
 
+    /**
+     * Returns the correct response for this question.
+     *
+     * Returns null for questions without a predefined correct response.
+     *
+     * @return array|null The correct response or null.
+     */
     public function get_correct_response()
     {
-        // Este método debe retornar la respuesta correcta a la pregunta, si es que hay una.
-        // Si tu tipo de pregunta no tiene una "respuesta correcta" (como podría ser el caso aquí),
-        // puedes simplemente retornar null.
         return null;
     }
 
+    /**
+     * Checks if the given response is complete.
+     *
+     * Always returns true as this question type does not expect user responses.
+     *
+     * @param array $response The response to check.
+     * @return bool True if the response is considered complete.
+     */
     public function is_complete_response(array $response)
     {
-        // Este método debe verificar si una respuesta dada a la pregunta está completa.
-        // Para un tipo de pregunta que no recoge respuestas, puedes considerar que todas las 
-        // "respuestas" están completas, o adaptar la lógica según sea necesario.
         return true;
     }
 
+    /**
+     * Determines if the response is gradable.
+     *
+     * Returns false for this question type as it does not process responses.
+     *
+     * @param array $response The response to check.
+     * @return bool True if the response can be graded.
+     */
     public function is_gradable_response(array $response)
     {
-        // Similar a is_complete_response, pero para verificar si la respuesta dada
-        // puede ser calificada. Para preguntas sin respuesta, puedes retornar false o adaptar.
         return false;
     }
 
+    /**
+     * Grades the given response.
+     *
+     * For non-automatically graded questions, this implementation is trivial.
+     *
+     * @param array $response The response to grade.
+     * @return array The grade fraction and the state of the question.
+     */
     public function grade_response(array $response)
     {
-        // Este método debe retornar una matriz con dos elementos: la fracción (entre 0 y 1)
-        // de la nota obtenida, y el estado de la pregunta (por ejemplo, question_state::$gradedright).
-        // Para preguntas que no se califican automáticamente, la implementación podría ser trivial.
         return array(1, question_state::$gradedright);
     }
 
+    /**
+     * Provides a validation error message for an invalid response.
+     *
+     * Always returns an empty string as this question type does not validate responses.
+     *
+     * @param array $response The response to validate.
+     * @return string An error message or an empty string.
+     */
     public function get_validation_error(array $response)
     {
-        // Este método debe retornar un string explicando por qué la respuesta dada es inválida,
-        // o un string vacío si la respuesta es válida. Para preguntas sin respuestas de usuarios,
-        // podría siempre retornar un string vacío.
         return '';
     }
 
+    /**
+     * Checks if two responses are the same.
+     *
+     * Always returns false as this question type does not compare responses.
+     *
+     * @param array $response1 The first response.
+     * @param array $response2 The second response.
+     * @return bool True if the responses are considered the same.
+     */
     public function is_same_response(array $response1, array $response2)
     {
-        // Como este tipo de pregunta no recoge respuestas directas, puedes retornar false.
-        // Adapta esta lógica si tu pregunta eventualmente recogerá respuestas.
         return false;
     }
 
+    /**
+     * Summarises a response for reporting purposes.
+     *
+     * Returns an empty string or a static summary as this question type does not process responses.
+     *
+     * @param array $response The response to summarise.
+     * @return string The summary of the response.
+     */
     public function summarise_response(array $response)
     {
-        // Para preguntas que no recogen respuestas, puedes retornar una cadena vacía
-        // o algún resumen estático, según lo que tenga más sentido para tu pregunta.
         return '';
     }
 }
