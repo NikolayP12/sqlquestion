@@ -24,84 +24,96 @@
 
 defined('MOODLE_INTERNAL') || die();
 
+/**
+ * Defines the editing form for the 'sqlquestion' question type.
+ * Extends the question_edit_form to customize specific fields for this question type.
+ */
 class qtype_sqlquestion_edit_form extends question_edit_form
 {
-
+    /**
+     * Adds specific fields to the question editing form.
+     * 
+     * Defines and sets up the additional fields required,
+     * such as related concepts, data (script in SQL), instructions, and the question's solution.
+     *
+     * @param MoodleQuickForm $mform The form being built.
+     */
     protected function definition_inner($mform)
     {
-        // Agrega el campo para los Conceptos relacionados con el ejercicio.
+        // Field for entering related concepts for the question.
         $mform->addElement('textarea', 'relatedconcepts', get_string('relatedconcepts', 'qtype_sqlquestion'), array('rows' => 3, 'cols' => 80));
-        $mform->setType('relatedconcepts', PARAM_TEXT); // Es más seguro y generalmente suficiente.
+        $mform->setType('relatedconcepts', PARAM_TEXT);
 
-        // Agrega el campo Data para código SQL.
+        // Field for entering the SQL code needed for the question.
         $mform->addElement('textarea', 'data', get_string('data', 'qtype_sqlquestion'), array('rows' => 15, 'cols' => 80));
-        $mform->setType('data', PARAM_RAW); // Permite contenido HTML, asegúrate de sanitizar al mostrar.
+        $mform->setType('data', PARAM_RAW); // Importante: Sanitizar al mostrar en el contexto de usuario.
 
-        // Agrega el campo para las Instrucciones del ejercicio.
+        // Field for entering instructions for students.
         $mform->addElement('textarea', 'instructions', get_string('instructions', 'qtype_sqlquestion'), array('rows' => 15, 'cols' => 80));
         $mform->setType('instructions', PARAM_TEXT);
 
-        // Agrega el campo para la Solución al ejercicio.
+        // Field for the expected solution of the question.
         $mform->addElement('textarea', 'solution', get_string('solution', 'qtype_sqlquestion'), array('rows' => 15, 'cols' => 80));
         $mform->setType('solution', PARAM_RAW);
     }
 
+    /**
+     * Preprocesses the question data before showing it in the form.
+     * 
+     * Loads previously saved values into the form fields, facilitating the editing
+     * of existing questions.
+     *
+     * @param stdClass $question Existing question data.
+     * @return stdClass Preprocessed question data.
+     */
     protected function data_preprocessing($question)
     {
         $question = parent::data_preprocessing($question);
 
-        // Verifica si hay opciones previamente guardadas para la pregunta.
-        if (empty($question->options)) {
-            return $question;
-        }
-
-        // Preprocesa 'relatedconcepts' si existe.
-        if (isset($question->options->relatedconcepts)) {
-            $question->relatedconcepts = $question->options->relatedconcepts;
-        }
-
-        // Preprocesa 'data' si existe.
-        if (isset($question->options->data)) {
-            $question->data = $question->options->data;
-        }
-
-        // Preprocesa 'instructions' si existe.
-        if (isset($question->options->instructions)) {
-            $question->instructions = $question->options->instructions;
-        }
-
-        // Preprocesa 'solution' si existe.
-        if (isset($question->options->solution)) {
-            $question->solution = $question->options->solution;
+        // Load existing data into form fields, if it's available.
+        if (!empty($question->options)) {
+            foreach (['relatedconcepts', 'data', 'instructions', 'solution'] as $field) {
+                if (isset($question->options->$field)) {
+                    $question->$field = $question->options->$field;
+                }
+            }
         }
 
         return $question;
     }
 
+    /**
+     * Validates the data submitted from the form.
+     * 
+     * Checks that all required fields are filled and meet specific validation criteria,
+     * such as ensuring the presence of SQL data.
+     *
+     * @param array $data The data submitted from the form.
+     * @param array $files Files submitted with the form.
+     * @return array Associative array of errors, keyed by field name.
+     */
     public function validation($data, $files)
     {
         $errors = parent::validation($data, $files);
 
-        // Validación para 'data' (código SQL).
-        // Validación para asegurarnos de que hay un generador de script.
-        if (trim($data['data']) == '') {
-            //$errors['data'] = get_string('error_data', 'error_data_empty');
+        if (trim($data['data']) === '') {
             $errors['data'] = get_string('error_data_empty', 'qtype_sqlquestion');
         }
-
-        // Validación para 'instructions'.
-        if (trim($data['instructions']) == '') {
+        if (trim($data['instructions']) === '') {
             $errors['instructions'] = get_string('error_instructions_empty', 'qtype_sqlquestion');
         }
-        // Validación para 'solution'.
-        if (trim($data['solution']) == '') {
+        if (trim($data['solution']) === '') {
             $errors['solution'] = get_string('error_solution_empty', 'qtype_sqlquestion');
         }
 
-        // Devuelve cualquier error encontrado.
         return $errors;
     }
 
+    /**
+     * Returns the type of question managed by this form.
+     * 
+     * @return string The question type.
+     */
     public function qtype()
     {
         return 'sqlquestion';
