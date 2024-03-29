@@ -27,32 +27,37 @@ defined('MOODLE_INTERNAL') || die();
 require_once($CFG->libdir . '/questionlib.php');
 
 /**
- * Class that represents a sqlquestion question type.
+ * The qtype_sqlquestion class represents the SQL question type.
  *
- * The class loads, saves and deletes questions of the type sqlquestion
- * to and from the database and provides methods to help with editing questions
- * of this type. It can also provide the implementation for import and export
- * in various formats.
+ * This class is responsible for loading, saving, and deleting SQL question
+ * types from the database. It also supports question editing and can handle
+ * import/export in various formats.
  */
 class qtype_sqlquestion extends question_type
 {
 
-    // Override functions as necessary from the parent class located at
-    // /question/type/questiontype.php.
+    /**
+     * Loads the question options from the database.
+     *
+     * This function is called to load the question options for
+     * the SQL question type when editing or attempting questions.
+     *
+     * @param object $question The question object.
+     */
 
     public function get_question_options($question)
     {
         global $DB;
 
-        // Asegura que el objeto de la pregunta tenga una propiedad 'options'.
+        // Ensure the question object has an options property.
         if (!property_exists($question, 'options')) {
             $question->options = new stdClass();
         }
 
-        // Recupera los datos específicos de la pregunta de la base de datos.
+        // Retrieve specific question data from the database.
         $options = $DB->get_record('qtype_sqlquestion_options', array('questionid' => $question->id), '*', MUST_EXIST);
 
-        // Asigna los datos recuperados a la propiedad 'options' del objeto de la pregunta.
+        // Assign the retrieved data to the question object's "options" property.
         $question->options->relatedconcepts = $options->relatedconcepts;
         $question->options->data = $options->data;
         $question->options->instructions = $options->instructions;
@@ -61,12 +66,19 @@ class qtype_sqlquestion extends question_type
         parent::get_question_options($question);
     }
 
-    // Metodo para el almacenamiento en la base de datos.
+    /**
+     * Saves the question options in the database.
+     *
+     * This function is responsible for either inserting new question options
+     * or updating existing ones in the database.
+     *
+     * @param object $question The question data being saved.
+     */
     public function save_question_options($question)
     {
         global $DB;
 
-        // Prepara los datos para ser insertados o actualizados.
+        // Prepare the data for database insertion or update.
         $options = new stdClass();
         $options->questionid = $question->id;
         $options->relatedconcepts = $question->relatedconcepts;
@@ -74,19 +86,28 @@ class qtype_sqlquestion extends question_type
         $options->instructions = $question->instructions;
         $options->solution = $question->solution;
 
-        // Verifica si ya existen opciones para esta pregunta.
+        // Check if options already exist for this question.
         $existing = $DB->get_record('qtype_sqlquestion_options', array('questionid' => $question->id));
 
         if ($existing) {
-            // Si existen, actualiza la entrada.
+            // If they exist, update the entry.
             $options->id = $existing->id;
             $DB->update_record('qtype_sqlquestion_options', $options);
         } else {
-            // De lo contrario, inserta una nueva entrada.
+            // Otherwise, insert a new entry.
             $DB->insert_record('qtype_sqlquestion_options', $options);
         }
     }
 
+    /**
+     * Initializes the question instance with specific question data.
+     *
+     * Called to load question data into the question instance for an attempt or
+     * preview, ensuring all necessary properties are set.
+     *
+     * @param question_definition $question The question definition being initialized.
+     * @param object $questiondata The specific question data.
+     */
     protected function initialise_question_instance(question_definition $question, $questiondata)
     {
         parent::initialise_question_instance($question, $questiondata);
@@ -97,7 +118,15 @@ class qtype_sqlquestion extends question_type
         $question->solution = $questiondata->options->solution;
     }
 
-    // Copiado directamente del essay
+    /**
+     * Deletes question options from the database.
+     *
+     * Called when a question of this type is deleted to ensure all
+     * associated data is removed from the database.
+     *
+     * @param int $questionid The ID of the question being deleted.
+     * @param int $contextid The context ID where the question is stored.
+     */
     public function delete_question($questionid, $contextid)
     {
         global $DB;
