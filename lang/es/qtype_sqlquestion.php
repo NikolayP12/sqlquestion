@@ -25,14 +25,14 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$string['relatedconcepts'] = 'Conceptos Relacionados.';
-$string['data'] = 'Código que genera la BD.';
-$string['instructions'] = 'Instrucciones para resolver el ejercicio.';
-$string['solution'] = 'Solución.';
+$string['relatedconcepts'] = 'Conceptos Relacionados';
+$string['data'] = 'Código que genera la BD';
+$string['instructions'] = 'Instrucciones para resolver el ejercicio';
+$string['solution'] = 'Solución';
 $string['error_data_empty'] = 'El campo data no puede estar vacío.';
 $string['error_instructions_empty'] = 'El campo de instrucciones no puede estar vacío.';
 $string['error_solution_empty'] = 'El campo solución no puede estar vacío.';
-$string['statement_tittle'] = 'Enunciando del ejercicio:';
+$string['statement_title'] = 'Enunciando del ejercicio:';
 $string['statement_concepts'] = 'Conceptos relacionados con el ejercicio:';
 $string['statement_data'] = 'Script que genera la base de datos:';
 $string['statement_instructions'] = 'Instrucciones para resolver el ejercicio:';
