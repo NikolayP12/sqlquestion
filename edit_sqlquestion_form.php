@@ -108,11 +108,14 @@ class qtype_sqlquestion_edit_form extends question_edit_form
     {
         $errors = parent::validation($data, $files);
 
-        if (trim($data['data']) === '') {
-            $errors['data'] = get_string('error_data_empty', 'qtype_sqlquestion');
+        if (trim($data['resultdata']) === '') {
+            $errors['resultdata'] = get_string('error_resultdata_empty', 'qtype_sqlquestion');
         }
-        if (trim($data['hint']) === '') {
-            $errors['hint'] = get_string('error_hint_empty', 'qtype_sqlquestion');
+        if (trim($data['subjectivedifficulty']) === '') {
+            $errors['subjectivedifficulty'] = get_string('error_subjectivedifficulty_empty', 'qtype_sqlquestion');
+        }
+        if (trim($data['objectivedifficulty']) === '') {
+            $errors['objectivedifficulty'] = get_string('error_objectivedifficulty_empty', 'qtype_sqlquestion');
         }
         if (trim($data['solution']) === '') {
             $errors['solution'] = get_string('error_solution_empty', 'qtype_sqlquestion');
