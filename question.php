@@ -36,7 +36,7 @@ class qtype_sqlquestion_question extends question_graded_automatically
     public $responseformat;
     public $relatedconcepts;
     public $data;
-    public $instructions;
+    public $hint;
     public $solution;
 
     public function get_format_renderer(moodle_page $page)

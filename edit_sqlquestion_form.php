@@ -34,7 +34,7 @@ class qtype_sqlquestion_edit_form extends question_edit_form
      * Adds specific fields to the question editing form.
      * 
      * Defines and sets up the additional fields required,
-     * such as related concepts, data (script in SQL), instructions, and the question's solution.
+     * such as related concepts, data (script in SQL), hint, and the question's solution.
      *
      * @param MoodleQuickForm $mform The form being built.
      */
@@ -48,9 +48,9 @@ class qtype_sqlquestion_edit_form extends question_edit_form
         $mform->addElement('textarea', 'data', get_string('data', 'qtype_sqlquestion'), array('rows' => 15, 'cols' => 80));
         $mform->setType('data', PARAM_RAW); // Importante: Sanitizar al mostrar en el contexto de usuario.
 
-        // Field for entering instructions for students.
-        $mform->addElement('textarea', 'instructions', get_string('instructions', 'qtype_sqlquestion'), array('rows' => 15, 'cols' => 80));
-        $mform->setType('instructions', PARAM_TEXT);
+        // Field for entering hint for students.
+        $mform->addElement('textarea', 'hint', get_string('hint', 'qtype_sqlquestion'), array('rows' => 15, 'cols' => 80));
+        $mform->setType('hint', PARAM_TEXT);
 
         // Field for the expected solution of the question.
         $mform->addElement('textarea', 'solution', get_string('solution', 'qtype_sqlquestion'), array('rows' => 15, 'cols' => 80));
@@ -72,7 +72,7 @@ class qtype_sqlquestion_edit_form extends question_edit_form
 
         // Load existing data into form fields, if it's available.
         if (!empty($question->options)) {
-            foreach (['relatedconcepts', 'data', 'instructions', 'solution'] as $field) {
+            foreach (['relatedconcepts', 'data', 'hint', 'solution'] as $field) {
                 if (isset($question->options->$field)) {
                     $question->$field = $question->options->$field;
                 }
@@ -99,8 +99,8 @@ class qtype_sqlquestion_edit_form extends question_edit_form
         if (trim($data['data']) === '') {
             $errors['data'] = get_string('error_data_empty', 'qtype_sqlquestion');
         }
-        if (trim($data['instructions']) === '') {
-            $errors['instructions'] = get_string('error_instructions_empty', 'qtype_sqlquestion');
+        if (trim($data['hint']) === '') {
+            $errors['hint'] = get_string('error_hint_empty', 'qtype_sqlquestion');
         }
         if (trim($data['solution']) === '') {
             $errors['solution'] = get_string('error_solution_empty', 'qtype_sqlquestion');

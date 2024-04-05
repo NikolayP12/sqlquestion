@@ -15,7 +15,7 @@ class qtype_sqlquestion_renderer extends qtype_renderer
      * 
      * This method is called by Moodle to generate the HTML needed to display
      * the question to the user, including the question text, any related concepts,
-     * the data (usually SQL code), instructions for solving the question, and the solution.
+     * the data (usually SQL code), hint for solving the question, and the solution.
      *
      * @param question_attempt $qa The question attempt object.
      * @param question_display_options $options Display options that affect the output.
@@ -41,9 +41,9 @@ class qtype_sqlquestion_renderer extends qtype_renderer
         // Use of <pre> to preserve formatting of the code.
         $output .= html_writer::tag('pre', s($question->data), array('class' => 'sqlquestion_data'));
 
-        // Displays the instructions for solving the question.
-        $output .= html_writer::tag('h3', get_string('statement_instructions', 'qtype_sqlquestion'), array('class' => 'sqlquestion_heading'));
-        $output .= html_writer::tag('div', format_text($question->instructions), array('class' => 'sqlquestion_instructions'));
+        // Displays the hint for solving the question.
+        $output .= html_writer::tag('h3', get_string('statement_hint', 'qtype_sqlquestion'), array('class' => 'sqlquestion_heading'));
+        $output .= html_writer::tag('div', format_text($question->hint), array('class' => 'sqlquestion_hint'));
 
         // Displays the solution.
         $output .= html_writer::tag('h3', get_string('statement_solution', 'qtype_sqlquestion'), array('class' => 'sqlquestion_heading'));
