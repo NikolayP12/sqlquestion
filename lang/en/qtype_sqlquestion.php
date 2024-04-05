@@ -27,7 +27,7 @@ defined('MOODLE_INTERNAL') || die();
 
 $string['relatedconcepts'] = 'Related Concepts';
 $string['data'] = 'Code that generates the DB';
-$string['hint'] = 'hint for solving the exercise';
+$string['hint'] = 'Hint for solving the exercise';
 $string['solution'] = 'Solution';
 $string['resultdata'] = 'Script for the Result Data';
 $string['subjectivedifficulty'] = 'Subjective Difficulty';
@@ -38,7 +38,7 @@ $string['error_objectivedifficulty_empty'] = 'Objective difficulty field can not
 $string['error_solution_empty'] = 'Solution field can not be empty.';
 $string['statement_title'] = 'Statement of the exercise:';
 $string['statement_concepts'] = 'Related concepts with the exercise:';
-$string['statement_data'] = 'Script that generate the data base:';
+$string['statement_data'] = 'Script that generates the data base:';
 $string['statement_hint'] = 'Hint for solving the exercise:';
 $string['statement_resultdata'] = 'Result Data for solving the exercise:';
 $string['statement_subjectivedifficulty'] = 'Subjective difficulty of the exercise:';
@@ -56,5 +56,5 @@ $string['pluginname_help'] = 'SQL questions that store information to perform SQ
 $string['pluginname_link'] = 'question/type/sqlquestion.';
 $string['pluginnameadding'] = 'Adding a SQL question.';
 $string['pluginnameediting'] = 'Editing a SQL question.';
-$string['pluginnamesummary'] = 'In this question the necessary elements for the SQLab plugin will be attached.';
+$string['pluginnamesummary'] = 'In this question will be attached the necessary elements for the SQLab plugin';
 $string['privacy:metadata'] = 'The SQL question type plugin does not use or store student information because it does not need it.';
