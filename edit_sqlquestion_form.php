@@ -46,11 +46,23 @@ class qtype_sqlquestion_edit_form extends question_edit_form
 
         // Field for entering the SQL code needed for the question.
         $mform->addElement('textarea', 'data', get_string('data', 'qtype_sqlquestion'), array('rows' => 15, 'cols' => 80));
-        $mform->setType('data', PARAM_RAW); // Importante: Sanitizar al mostrar en el contexto de usuario.
+        $mform->setType('data', PARAM_RAW);
 
         // Field for entering hint for students.
         $mform->addElement('textarea', 'hint', get_string('hint', 'qtype_sqlquestion'), array('rows' => 15, 'cols' => 80));
         $mform->setType('hint', PARAM_TEXT);
+
+        // Field for entering the sript code that generates the result data for the question.
+        $mform->addElement('textarea', 'resultdata', get_string('resultdata', 'qtype_sqlquestion'), array('rows' => 15, 'cols' => 80));
+        $mform->setType('data', PARAM_RAW);
+
+        // Field for entering the SQL code subjetive difficulty.
+        $mform->addElement('textarea', 'subjectivedifficulty', get_string('subjectivedifficulty', 'qtype_sqlquestion'), array('rows' => 15, 'cols' => 80));
+        $mform->setType('data', PARAM_TEXT);
+
+        // Field for entering the SQL code objective difficulty.
+        $mform->addElement('textarea', 'objectivedifficulty', get_string('objectivedifficulty', 'qtype_sqlquestion'), array('rows' => 15, 'cols' => 80));
+        $mform->setType('data', PARAM_TEXT);
 
         // Field for the expected solution of the question.
         $mform->addElement('textarea', 'solution', get_string('solution', 'qtype_sqlquestion'), array('rows' => 15, 'cols' => 80));
