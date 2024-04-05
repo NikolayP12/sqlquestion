@@ -45,6 +45,18 @@ class qtype_sqlquestion_renderer extends qtype_renderer
         $output .= html_writer::tag('h3', get_string('statement_hint', 'qtype_sqlquestion'), array('class' => 'sqlquestion_heading'));
         $output .= html_writer::tag('div', format_text($question->hint), array('class' => 'sqlquestion_hint'));
 
+        // Displays the resultdata for solving the question.
+        $output .= html_writer::tag('h3', get_string('statement_resultdata', 'qtype_sqlquestion'), array('class' => 'sqlquestion_heading'));
+        $output .= html_writer::tag('div', format_text($question->resultdata), array('class' => 'sqlquestion_resultdata'));
+
+        // Displays the subjectivedifficulty for solving the question.
+        $output .= html_writer::tag('h3', get_string('statement_subjectivedifficulty', 'qtype_sqlquestion'), array('class' => 'sqlquestion_heading'));
+        $output .= html_writer::tag('div', format_text($question->subjectivedifficulty), array('class' => 'sqlquestion_subjectivedifficulty'));
+
+        // Displays the objectivedifficulty for solving the question.
+        $output .= html_writer::tag('h3', get_string('statement_objectivedifficulty', 'qtype_sqlquestion'), array('class' => 'sqlquestion_heading'));
+        $output .= html_writer::tag('div', format_text($question->objectivedifficulty), array('class' => 'sqlquestion_objectivedifficulty'));
+
         // Displays the solution.
         $output .= html_writer::tag('h3', get_string('statement_solution', 'qtype_sqlquestion'), array('class' => 'sqlquestion_heading'));
         $output .= html_writer::tag('div', format_text($question->solution), array('class' => 'sqlquestion_solution'));

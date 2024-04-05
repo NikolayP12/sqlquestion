@@ -34,7 +34,7 @@ class backup_qtype_sqlquestion_plugin extends backup_qtype_plugin
 
         // Defines the nested element for the sqlquestion settings, specifying which fields to include.
         $sqlquestion = new backup_nested_element('sqlquestion', array('id'), array(
-            'relatedconcepts', 'data', 'hint', 'solution'
+            'relatedconcepts', 'data', 'hint', 'resultdata', 'subjectivedifficulty', 'objectivedifficulty', 'solution'
         ));
 
         // Attaches the sqlquestion element to the wrapper.

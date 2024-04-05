@@ -57,11 +57,11 @@ class qtype_sqlquestion_edit_form extends question_edit_form
         $mform->setType('data', PARAM_RAW);
 
         // Field for entering the SQL code subjetive difficulty.
-        $mform->addElement('textarea', 'subjectivedifficulty', get_string('subjectivedifficulty', 'qtype_sqlquestion'), array('rows' => 15, 'cols' => 80));
+        $mform->addElement('textarea', 'subjectivedifficulty', get_string('subjectivedifficulty', 'qtype_sqlquestion'), array('rows' => 2, 'cols' => 10));
         $mform->setType('data', PARAM_TEXT);
 
         // Field for entering the SQL code objective difficulty.
-        $mform->addElement('textarea', 'objectivedifficulty', get_string('objectivedifficulty', 'qtype_sqlquestion'), array('rows' => 15, 'cols' => 80));
+        $mform->addElement('textarea', 'objectivedifficulty', get_string('objectivedifficulty', 'qtype_sqlquestion'), array('rows' => 2, 'cols' => 10));
         $mform->setType('data', PARAM_TEXT);
 
         // Field for the expected solution of the question.

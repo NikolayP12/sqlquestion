@@ -47,6 +47,9 @@ class restore_qtype_sqlquestion_plugin extends restore_qtype_plugin
         // Ensures that 'data', 'hint', and 'solution' fields have default values if they are null or not set.
         $data->data = $data->data ?? get_string('data_no_present', 'qtype_sqlquestion');
         $data->hint = $data->hint ?? get_string('hint_no_present', 'qtype_sqlquestion');
+        $data->hint = $data->resultdata ?? get_string('resultdata_no_present', 'qtype_sqlquestion');
+        $data->hint = $data->subjectivedifficulty ?? get_string('subjectivedifficulty_no_present', 'qtype_sqlquestion');
+        $data->hint = $data->objectivedifficulty ?? get_string('objectivedifficulty', 'qtype_sqlquestion');
         $data->solution = $data->solution ?? get_string('solution_no_present', 'qtype_sqlquestion');
 
         // Checks whether the question was created or mapped during restoration.
