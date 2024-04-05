@@ -37,6 +37,9 @@ class qtype_sqlquestion_question extends question_graded_automatically
     public $relatedconcepts;
     public $data;
     public $hint;
+    public $resultdata;
+    public $subjectivedifficulty;
+    public $objectivedifficulty;
     public $solution;
 
     public function get_format_renderer(moodle_page $page)

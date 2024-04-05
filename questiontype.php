@@ -61,6 +61,9 @@ class qtype_sqlquestion extends question_type
         $question->options->relatedconcepts = $options->relatedconcepts;
         $question->options->data = $options->data;
         $question->options->hint = $options->hint;
+        $question->options->resultdata = $options->resultdata;
+        $question->options->subjectivedifficulty = $options->subjectivedifficulty;
+        $question->options->objectivedifficulty = $options->objectivedifficulty;
         $question->options->solution = $options->solution;
 
         parent::get_question_options($question);
@@ -84,6 +87,9 @@ class qtype_sqlquestion extends question_type
         $options->relatedconcepts = $question->relatedconcepts;
         $options->data = $question->data;
         $options->hint = $question->hint;
+        $options->resultdata = $question->resultdata;
+        $options->subjectivedifficulty = $question->subjectivedifficulty;
+        $options->objectivedifficulty = $question->objectivedifficulty;
         $options->solution = $question->solution;
 
         // Check if options already exist for this question.
@@ -115,6 +121,9 @@ class qtype_sqlquestion extends question_type
         $question->relatedconcepts = $questiondata->options->relatedconcepts;
         $question->data = $questiondata->options->data;
         $question->hint = $questiondata->options->hint;
+        $question->resultdata = $questiondata->options->resultdata;
+        $question->subjectivedifficulty = $questiondata->options->subjectivedifficulty;
+        $question->objectivedifficulty = $questiondata->options->objectivedifficulty;
         $question->solution = $questiondata->options->solution;
     }
 
