@@ -84,7 +84,7 @@ class qtype_sqlquestion_edit_form extends question_edit_form
 
         // Load existing data into form fields, if it's available.
         if (!empty($question->options)) {
-            foreach (['relatedconcepts', 'data', 'hint', 'solution'] as $field) {
+            foreach (['relatedconcepts', 'data', 'hint', 'resultdata', 'subjectivedifficulty', 'objectivedifficulty', 'solution'] as $field) {
                 if (isset($question->options->$field)) {
                     $question->$field = $question->options->$field;
                 }
