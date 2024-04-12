@@ -49,7 +49,7 @@ class restore_qtype_sqlquestion_plugin extends restore_qtype_plugin
         $data->hint = $data->hint ?? get_string('hint_no_present', 'qtype_sqlquestion');
         $data->resultdata = $data->resultdata ?? get_string('resultdata_no_present', 'qtype_sqlquestion');
         $data->subjectivedifficulty = $data->subjectivedifficulty ?? get_string('subjectivedifficulty_no_present', 'qtype_sqlquestion');
-        $data->objectivedifficulty = $data->objectivedifficulty ?? get_string('objectivedifficulty', 'qtype_sqlquestion');
+        $data->objectivedifficulty = $data->objectivedifficulty ?? get_string('objectivedifficulty_no_present', 'qtype_sqlquestion');
         $data->decreaseattempt = $data->decreaseattempt ?? 0;
         $data->mingrade = $data->mingrade ?? 0;
         $data->solution = $data->solution ?? get_string('solution_no_present', 'qtype_sqlquestion');
