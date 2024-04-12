@@ -64,6 +64,8 @@ class qtype_sqlquestion extends question_type
         $question->options->resultdata = $options->resultdata;
         $question->options->subjectivedifficulty = $options->subjectivedifficulty;
         $question->options->objectivedifficulty = $options->objectivedifficulty;
+        $question->options->decreaseattempt = $options->decreaseattempt;
+        $question->options->mingrade = $options->mingrade;
         $question->options->solution = $options->solution;
 
         parent::get_question_options($question);
@@ -90,6 +92,8 @@ class qtype_sqlquestion extends question_type
         $options->resultdata = $question->resultdata;
         $options->subjectivedifficulty = $question->subjectivedifficulty;
         $options->objectivedifficulty = $question->objectivedifficulty;
+        $options->decreaseattempt = $question->decreaseattempt;
+        $options->mingrade = $question->mingrade;
         $options->solution = $question->solution;
 
         // Check if options already exist for this question.
@@ -124,6 +128,8 @@ class qtype_sqlquestion extends question_type
         $question->resultdata = $questiondata->options->resultdata;
         $question->subjectivedifficulty = $questiondata->options->subjectivedifficulty;
         $question->objectivedifficulty = $questiondata->options->objectivedifficulty;
+        $question->decreaseattempt = $questiondata->options->decreaseattempt;
+        $question->mingrade = $questiondata->options->mingrade;
         $question->solution = $questiondata->options->solution;
     }
 
