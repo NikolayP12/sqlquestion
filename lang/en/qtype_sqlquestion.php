@@ -61,6 +61,7 @@ $string['hint_no_present'] = 'Hint no present.';
 $string['resultdata_no_present'] = 'Resultdata no present.';
 $string['subjectivedifficulty_no_present'] = 'Subjective difficulty no present.';
 $string['objectivedifficulty_no_present'] = 'Objective difficulty no present.';
+
 $string['solution_no_present'] = 'Solution no present.';
 
 // Plugin information strings

@@ -57,6 +57,14 @@ class qtype_sqlquestion_renderer extends qtype_renderer
         $output .= html_writer::tag('h3', get_string('statement_objectivedifficulty', 'qtype_sqlquestion'), array('class' => 'sqlquestion_heading'));
         $output .= html_writer::tag('div', format_text($question->objectivedifficulty), array('class' => 'sqlquestion_objectivedifficulty'));
 
+        // Displays the decreaseattempt that delimit the decrease of every attempt.
+        $output .= html_writer::tag('h3', get_string('statement_decreaseattempt', 'qtype_sqlquestion'), array('class' => 'sqlquestion_heading'));
+        $output .= html_writer::tag('div', format_text($question->decreaseattempt), array('class' => 'sqlquestion_decreaseattempt'));
+
+        // Displays the mingrade set the limit of decreasing
+        $output .= html_writer::tag('h3', get_string('statement_mingrade', 'qtype_sqlquestion'), array('class' => 'sqlquestion_heading'));
+        $output .= html_writer::tag('div', format_text($question->mingrade), array('class' => 'sqlquestion_mingrade'));
+
         // Displays the solution.
         $output .= html_writer::tag('h3', get_string('statement_solution', 'qtype_sqlquestion'), array('class' => 'sqlquestion_heading'));
         $output .= html_writer::tag('div', format_text($question->solution), array('class' => 'sqlquestion_solution'));
