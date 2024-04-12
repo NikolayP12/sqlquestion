@@ -44,12 +44,14 @@ class restore_qtype_sqlquestion_plugin extends restore_qtype_plugin
         $data = (object)$data;
         $oldid = $data->id;
 
-        // Ensures that 'data', 'hint', and 'solution' fields have default values if they are null or not set.
+        // Ensures that 'data', 'hint', 'resultdata', 'subjectivedifficulty', 'objectivedifficulty', 'decreaseattempt', 'mingrade' and 'solution' fields have default values if they are null or not set.
         $data->data = $data->data ?? get_string('data_no_present', 'qtype_sqlquestion');
         $data->hint = $data->hint ?? get_string('hint_no_present', 'qtype_sqlquestion');
-        $data->hint = $data->resultdata ?? get_string('resultdata_no_present', 'qtype_sqlquestion');
-        $data->hint = $data->subjectivedifficulty ?? get_string('subjectivedifficulty_no_present', 'qtype_sqlquestion');
-        $data->hint = $data->objectivedifficulty ?? get_string('objectivedifficulty', 'qtype_sqlquestion');
+        $data->resultdata = $data->resultdata ?? get_string('resultdata_no_present', 'qtype_sqlquestion');
+        $data->subjectivedifficulty = $data->subjectivedifficulty ?? get_string('subjectivedifficulty_no_present', 'qtype_sqlquestion');
+        $data->objectivedifficulty = $data->objectivedifficulty ?? get_string('objectivedifficulty', 'qtype_sqlquestion');
+        $data->decreaseattempt = $data->decreaseattempt ?? 0;
+        $data->mingrade = $data->mingrade ?? 0;
         $data->solution = $data->solution ?? get_string('solution_no_present', 'qtype_sqlquestion');
 
         // Checks whether the question was created or mapped during restoration.
