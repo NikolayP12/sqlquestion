@@ -25,6 +25,7 @@
 
 defined('MOODLE_INTERNAL') || die();
 
+// Name strings
 $string['relatedconcepts'] = 'Related Concepts';
 $string['data'] = 'Code that generates the DB';
 $string['hint'] = 'Hint for solving the exercise';
@@ -32,10 +33,18 @@ $string['solution'] = 'Solution';
 $string['resultdata'] = 'Script for the Result Data';
 $string['subjectivedifficulty'] = 'Subjective Difficulty';
 $string['objectivedifficulty'] = 'Objective Difficulty';
+$string['decreaseattempt'] = 'Decrease per attempt';
+$string['mingrade'] = 'Minimum grade';
+
+// Error strings
 $string['error_resultdata_empty'] = 'Result data field can not be empty.';
 $string['error_subjectivedifficulty_empty'] = 'Subjective difficulty field can not be empty.';
 $string['error_objectivedifficulty_empty'] = 'Objective difficulty field can not be empty.';
+$string['error_decreaseattempt_empty'] = 'The decrease field can not be empty.';
+$string['error_mingrade_empty'] = 'Minimun grade field can not be empty.';
 $string['error_solution_empty'] = 'Solution field can not be empty.';
+
+// Statement strings
 $string['statement_title'] = 'Statement of the exercise:';
 $string['statement_concepts'] = 'Related concepts with the exercise:';
 $string['statement_data'] = 'Script that generates the data base:';
@@ -43,13 +52,18 @@ $string['statement_hint'] = 'Hint for solving the exercise:';
 $string['statement_resultdata'] = 'Result Data for solving the exercise:';
 $string['statement_subjectivedifficulty'] = 'Subjective difficulty of the exercise:';
 $string['statement_objectivedifficulty'] = 'Objective difficulty of the exercise:';
+$string['statement_decreaseattempt'] = 'Decrease of the exercise:';
+$string['statement_mingrade'] = 'Minimun grade of the exercise:';
 $string['statement_solution'] = 'Solution of the exercise:';
+
 $string['data_no_present'] = 'Script no present.';
 $string['hint_no_present'] = 'Hint no present.';
 $string['resultdata_no_present'] = 'Resultdata no present.';
 $string['subjectivedifficulty_no_present'] = 'Subjective difficulty no present.';
 $string['objectivedifficulty_no_present'] = 'Objective difficulty no present.';
 $string['solution_no_present'] = 'Solution no present.';
+
+// Plugin information strings
 $string['privacy:metadata'] = 'The SQL question type plugin does not store any personal data.';
 $string['pluginname'] = 'SQL question';
 $string['pluginname_help'] = 'SQL questions that store information to perform SQLab activities.';

@@ -64,6 +64,18 @@ class qtype_sqlquestion_edit_form extends question_edit_form
         $mform->addElement('textarea', 'objectivedifficulty', get_string('objectivedifficulty', 'qtype_sqlquestion'), array('rows' => 2, 'cols' => 10));
         $mform->setType('data', PARAM_TEXT);
 
+        // Field for entering the decrease amount per attempt
+        $mform->addElement('text', 'decreaseattempt', get_string('decreaseattempt', 'qtype_sqlquestion'));
+        $mform->setType('decreaseattempt', PARAM_FLOAT);
+        $mform->addRule('decreaseattempt', null, 'numeric', null, 'client');
+        $mform->setDefault('decreaseattempt', 0.00);
+
+        // Field for entering the minimum grade limit
+        $mform->addElement('text', 'mingrade', get_string('mingrade', 'qtype_sqlquestion'));
+        $mform->setType('mingrade', PARAM_FLOAT);
+        $mform->addRule('mingrade', null, 'numeric', null, 'client');
+        $mform->setDefault('mingrade', 0.00);
+
         // Field for the expected solution of the question.
         $mform->addElement('textarea', 'solution', get_string('solution', 'qtype_sqlquestion'), array('rows' => 15, 'cols' => 80));
         $mform->setType('solution', PARAM_RAW);
@@ -84,7 +96,7 @@ class qtype_sqlquestion_edit_form extends question_edit_form
 
         // Load existing data into form fields, if it's available.
         if (!empty($question->options)) {
-            foreach (['relatedconcepts', 'data', 'hint', 'resultdata', 'subjectivedifficulty', 'objectivedifficulty', 'solution'] as $field) {
+            foreach (['relatedconcepts', 'data', 'hint', 'resultdata', 'subjectivedifficulty', 'objectivedifficulty', 'decreaseattempt', 'mingrade', 'solution'] as $field) {
                 if (isset($question->options->$field)) {
                     $question->$field = $question->options->$field;
                 }
@@ -116,6 +128,12 @@ class qtype_sqlquestion_edit_form extends question_edit_form
         }
         if (trim($data['objectivedifficulty']) === '') {
             $errors['objectivedifficulty'] = get_string('error_objectivedifficulty_empty', 'qtype_sqlquestion');
+        }
+        if (trim($data['decreaseattempt']) === '') {
+            $errors['decreaseattempt'] = get_string('error_decreaseattempt_empty', 'qtype_sqlquestion');
+        }
+        if (trim($data['mingrade']) === '') {
+            $errors['mingrade'] = get_string('error_mingrade_empty', 'qtype_sqlquestion');
         }
         if (trim($data['solution']) === '') {
             $errors['solution'] = get_string('error_solution_empty', 'qtype_sqlquestion');
