@@ -27,6 +27,10 @@
         <FIELD NAME="subjectivedifficulty" TYPE="text" NOTNULL="true" SEQUENCE="false"/>
         <!-- Required text field where will be provided the objective difficulty -->
         <FIELD NAME="objectivedifficulty" TYPE="text" NOTNULL="true" SEQUENCE="false"/>
+        <!-- Required decimal field for delimit the decrease of every attempt -->
+        <FIELD NAME="decreaseattempt" TYPE="number" LENGTH="10, 2" NOTNULL="true" DEFAULT="0.00" SEQUENCE="false" COMMENT="The value by which the grade is decremented per attempt."/>
+        <!-- Required decimal field to set the limit of decreasing -->
+        <FIELD NAME="mingrade" TYPE="number" LENGTH="10, 2" NOTNULL="true" DEFAULT="0.00" SEQUENCE="false" COMMENT="The grade limit to which the grade can be decremented."/>
         <!-- Required text field where will be provided the SQL question answer. -->
         <FIELD NAME="solution" TYPE="text" NOTNULL="true" SEQUENCE="false"/>
       </FIELDS>
