@@ -38,7 +38,7 @@ $string['mingrade'] = 'Nota mínima obtenible';
 
 // Error strings
 $string['error_resultdata_empty'] = 'El campo result data no puede estar vacío.';
-$string['error_subjectivedifficulty_empty'] = 'El campo dificultad objetiva no puede estar vacío.';
+$string['error_subjectivedifficulty_empty'] = 'El campo dificultad subjetiva no puede estar vacío.';
 $string['error_objectivedifficulty_empty'] = 'El campo dificultad objetiva no puede estar vacío.';
 $string['error_decreaseattempt_empty'] = 'El campo de reducción no puede estar vacío.';
 $string['error_mingrade_empty'] = 'El campo de nota mínima obtenible no puede estar vacío.';
@@ -53,7 +53,7 @@ $string['statement_resultdata'] = 'Result Data para resolver el ejercicio:';
 $string['statement_subjectivedifficulty'] = 'Dificultad subjetiva del ejercicio:';
 $string['statement_objectivedifficulty'] = 'Dificultad objetiva del ejercicio:';
 $string['statement_decreaseattempt'] = 'Reducción por intento del ejercicio:';
-$string['statement_mingrade'] = 'Nota mínima obtenible el ejercicio:';
+$string['statement_mingrade'] = 'Nota mínima obtenible en el ejercicio:';
 $string['statement_solution'] = 'Solución del ejercicio:';
 
 // Strings for restoring information
