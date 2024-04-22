@@ -36,6 +36,18 @@ $string['objectivedifficulty'] = 'Objective Difficulty';
 $string['decreaseattempt'] = 'Decrease per attempt';
 $string['mingrade'] = 'Minimum grade';
 
+// Helpful strings
+$string['relatedconcepts_help'] = 'In this field can be written those concepts to which the exercise is closely related, and that have been previously defined in the Moodle Database module.';
+$string['data_help'] = 'In this field you can attach the code that must be previously executed for the contextualization of the database for the correct execution of the exercise. For example: INSERT INTO Books (Book_ID, Title, Author) VALUES...';
+$string['hint_help'] = 'In this field can be written hints that can be consulted by the students in order to solve the exercise.';
+$string['resultdata_help'] = 'In this field you must attach the code that will generate the expected tables as a solution, as a sql script. For example: SELECT * FROM cars.';
+$string['subjectivedifficulty_help'] = 'In this field is described the subjective difficulty that the teacher has considered for the exercise.';
+$string['objectivedifficulty_help'] = 'In this field is described the objective difficulty of the exercise.';
+$string['decreaseattempt_help'] = 'This field defines the reduction that will be applied to the maximum grade obtainable by the student in a question, each time the student executes a statement.';
+$string['mingrade_help'] = 'This field defines the grade from which the reduction per attempt will not continue to be subtracted from the student, for each executed sentence. 
+For example: If a reduction per attempt of 0.25 has been defined, and a minimum grade of 3 is obtained, the grade can not be reduced any further even if sentences continue to be executed.';
+$string['solution_help'] = 'In this field you must attach the solution in code form, as a sql script. For example: SELECT * FROM cars.';
+
 // Error strings
 $string['error_resultdata_empty'] = 'Result data field can not be empty.';
 $string['error_subjectivedifficulty_empty'] = 'Subjective difficulty field can not be empty.';

@@ -36,6 +36,18 @@ $string['objectivedifficulty'] = 'Dificultad objetiva';
 $string['decreaseattempt'] = 'Reducción por intento';
 $string['mingrade'] = 'Nota mínima obtenible';
 
+// Helpful strings
+$string['relatedconcepts_help'] = 'En este campo deben escribirse aquellos conceptos con los que está estrechamente relacionado el ejercicio, y que previamente han sido definidos en el módulo de Base de Datos de Moodle.';
+$string['data_help'] = 'En este campo se debe adjuntar el código que debe ser previamente ejecutado para la contextualización de la base de datos para la correcta realización del ejercicio. Por ejemplo: INSERT INTO Libros (ID_Libro, Titulo, Autor) VALUES... ';
+$string['hint_help'] = 'En este campo se pueden escribir pistas que pueden consultar los alumnos para poder resolver el ejercicio.';
+$string['resultdata_help'] = 'En este campo se debe adjuntar el código que generará las tablas esperadas como solución, como un script sql.  Por ejemplo: SELECT * FROM coches.';
+$string['subjectivedifficulty_help'] = 'En este campo se describe la dificultad subjetiva que ha considerado el profesor para el ejercicio.';
+$string['objectivedifficulty_help'] = 'En este campo se describe la dificultad objetiva del ejercicio.';
+$string['decreaseattempt_help'] = 'Este campo define la reducción que se aplicará a la nota máxima obtenible por el alumno en la pregunta cada vez que ejecute una sentencia.';
+$string['mingrade_help'] = 'Este campo define la nota a partir de la cual no se continuará restando al alumno la reducción por intento, por cada sentencia ejecutada. 
+Por ejemplo: Si se ha definido una reducción por intento de 0.25, y la nota mínima obtenible es de 3, la nota no podrá reducirse más aunque sigan ejecutandose sentencias.';
+$string['solution_help'] = 'En este campo se debe adjuntar la solución en forma de código, como un script sql. Por ejemplo: SELECT * FROM coches.';
+
 // Error strings
 $string['error_resultdata_empty'] = 'El campo result data no puede estar vacío.';
 $string['error_subjectivedifficulty_empty'] = 'El campo dificultad subjetiva no puede estar vacío.';
