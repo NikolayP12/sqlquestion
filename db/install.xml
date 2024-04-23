@@ -1,4 +1,4 @@
-<?xml version="1.2" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <!-- 
     XMLDB Definition for custom SQL question type plugin.
     This file defines the structure of the database tables used by the 'sqlquestion' question type.

@@ -36,14 +36,18 @@ class qtype_sqlquestion_renderer extends qtype_renderer
             $output .= html_writer::tag('div', format_text($question->relatedconcepts), array('class' => 'sqlquestion_relatedconcepts'));
         }
 
-        // Displays the data section, typically containing SQL code.
-        $output .= html_writer::tag('h3', get_string('statement_data', 'qtype_sqlquestion'), array('class' => 'sqlquestion_heading'));
-        // Use of <pre> to preserve formatting of the code.
-        $output .= html_writer::tag('pre', s($question->data), array('class' => 'sqlquestion_data'));
+        if (!empty($question->data)) {
+            // Displays the data section, typically containing SQL code.
+            $output .= html_writer::tag('h3', get_string('statement_data', 'qtype_sqlquestion'), array('class' => 'sqlquestion_heading'));
+            // Use of <pre> to preserve formatting of the code.
+            $output .= html_writer::tag('pre', s($question->data), array('class' => 'sqlquestion_data'));
+        }
 
-        // Displays the hint for solving the question.
-        $output .= html_writer::tag('h3', get_string('statement_hint', 'qtype_sqlquestion'), array('class' => 'sqlquestion_heading'));
-        $output .= html_writer::tag('div', format_text($question->hint), array('class' => 'sqlquestion_hint'));
+        if (!empty($question->hint)) {
+            // Displays the hint for solving the question.
+            $output .= html_writer::tag('h3', get_string('statement_hint', 'qtype_sqlquestion'), array('class' => 'sqlquestion_heading'));
+            $output .= html_writer::tag('div', format_text($question->hint), array('class' => 'sqlquestion_hint'));
+        }
 
         // Displays the resultdata for solving the question.
         $output .= html_writer::tag('h3', get_string('statement_resultdata', 'qtype_sqlquestion'), array('class' => 'sqlquestion_heading'));

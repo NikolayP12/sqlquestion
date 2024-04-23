@@ -2,16 +2,6 @@
     margin-bottom: 15px;
 }
 
-/*p {
-    max-width: 100%;
-    height: auto;
-}*/
-
-/*img {
-    max-width: 100%;
-    height: auto;
-}*/
-
 .sqlquestion_relatedconcepts {
     margin-bottom: 15px;
 }
@@ -21,6 +11,26 @@
 }
 
 .sqlquestion_hint {
+    margin-bottom: 15px;
+}
+
+.sqlquestion_resultdata {
+    margin-bottom: 15px;
+}
+
+.sqlquestion_subjectivedifficulty {
+    margin-bottom: 15px;
+}
+
+.sqlquestion_objectivedifficulty {
+    margin-bottom: 15px;
+}
+
+.sqlquestion_decreaseattempt {
+    margin-bottom: 15px;
+}
+
+.sqlquestion_mingrade {
     margin-bottom: 15px;
 }
 
