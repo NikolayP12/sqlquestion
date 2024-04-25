@@ -27,13 +27,13 @@ defined('MOODLE_INTERNAL') || die();
 
 // Name strings
 $string['relatedconcepts'] = 'Conceptos Relacionados';
-$string['relationalschema'] = 'Código que contextualiza el esquema de la base de datos';
-$string['data'] = 'Código que contextualiza la base de datos';
+$string['relationalschema'] = 'Relational Schema: Código que contextualiza el esquema de la base de datos';
+$string['data'] = 'Data: Código que contextualiza la base de datos';
 $string['sqlcheck'] = 'SQL check';
 $string['sqlcheckrun'] = 'SQL check run';
 $string['code'] = 'Code: Pistas para resolver el ejercicio';
 $string['solution'] = 'Solución';
-$string['resultdata'] = 'Script Result Data';
+$string['resultdata'] = 'Result Data';
 $string['subjectivedifficulty'] = 'Dificultad subjetiva';
 $string['objectivedifficulty'] = 'Dificultad objetiva';
 $string['decreaseattempt'] = 'Reducción por intento';
