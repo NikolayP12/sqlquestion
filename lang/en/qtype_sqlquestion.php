@@ -27,10 +27,10 @@ defined('MOODLE_INTERNAL') || die();
 
 // Name strings
 $string['relatedconcepts'] = 'Related Concepts';
-$string['data'] = 'Code that generates the DB';
-$string['hint'] = 'Hint for solving the exercise';
+$string['data'] = 'Code that contextualizes the database';
+$string['hint'] = 'Code hint for solving the exercise';
 $string['solution'] = 'Solution';
-$string['resultdata'] = 'Script for the Result Data';
+$string['resultdata'] = 'Script Result Data';
 $string['subjectivedifficulty'] = 'Subjective Difficulty';
 $string['objectivedifficulty'] = 'Objective Difficulty';
 $string['decreaseattempt'] = 'Decrease per attempt';
@@ -38,7 +38,7 @@ $string['mingrade'] = 'Minimum grade';
 
 // Helpful strings
 $string['relatedconcepts_help'] = 'In this field can be written those concepts to which the exercise is closely related, and that have been previously defined in the Moodle Database module.';
-$string['data_help'] = 'In this field you can attach the code that must be previously executed for the contextualization of the database for the correct execution of the exercise. For example: INSERT INTO Books (Book_ID, Title, Author) VALUES...';
+$string['data_help'] = 'In this field you can attach the code that must be previously executed for the contextualization of the database for the correct execution of the exercise. For example: CREATE TABLE Books (...) and/or INSERT INTO Books (ID_Book, Title, Autor) VALUES...';
 $string['hint_help'] = 'In this field can be written hints that can be consulted by the students in order to solve the exercise.';
 $string['resultdata_help'] = 'In this field you must attach the code that will generate the expected tables as a solution, as a sql script. For example: SELECT * FROM cars.';
 $string['subjectivedifficulty_help'] = 'In this field is described the subjective difficulty that the teacher has considered for the exercise.';

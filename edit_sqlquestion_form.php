@@ -61,17 +61,18 @@ class qtype_sqlquestion_edit_form extends question_edit_form
         $mform->addRule('resultdata', get_string('required'), 'required', null, 'client');
         $mform->addHelpButton('resultdata', 'resultdata', 'qtype_sqlquestion');
 
+        // Field for entering the SQL code objective difficulty.
+        $mform->addElement('textarea', 'objectivedifficulty', get_string('objectivedifficulty', 'qtype_sqlquestion'), array('rows' => 2, 'cols' => 10));
+        $mform->setType('data', PARAM_TEXT);
+        $mform->addRule('objectivedifficulty', get_string('required'), 'required', null, 'client');
+        $mform->addHelpButton('objectivedifficulty', 'objectivedifficulty', 'qtype_sqlquestion');
+
         // Field for entering the SQL code subjetive difficulty.
         $mform->addElement('textarea', 'subjectivedifficulty', get_string('subjectivedifficulty', 'qtype_sqlquestion'), array('rows' => 2, 'cols' => 10));
         $mform->setType('data', PARAM_TEXT);
         $mform->addRule('subjectivedifficulty', get_string('required'), 'required', null, 'client');
         $mform->addHelpButton('subjectivedifficulty', 'subjectivedifficulty', 'qtype_sqlquestion');
 
-        // Field for entering the SQL code objective difficulty.
-        $mform->addElement('textarea', 'objectivedifficulty', get_string('objectivedifficulty', 'qtype_sqlquestion'), array('rows' => 2, 'cols' => 10));
-        $mform->setType('data', PARAM_TEXT);
-        $mform->addRule('objectivedifficulty', get_string('required'), 'required', null, 'client');
-        $mform->addHelpButton('objectivedifficulty', 'objectivedifficulty', 'qtype_sqlquestion');
 
         // Field for entering the decrease amount per attempt
         $mform->addElement('text', 'decreaseattempt', get_string('decreaseattempt', 'qtype_sqlquestion'));
