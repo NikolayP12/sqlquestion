@@ -18,11 +18,11 @@
         <!-- Optional text field for storing related concepts associated with the question. -->
         <FIELD NAME="relatedconcepts" TYPE="text" NOTNULL="false" SEQUENCE="false"/> 
         <!-- Optional text field for storing the script that will generate the database context for the question. -->
-        <FIELD NAME="data" TYPE="longtext" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="data" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
         <!-- Optional hint provided to the student for answering the question. -->
-        <FIELD NAME="hint" TYPE="longtext" NOTNULL="false" SEQUENCE="false"/> 
+        <FIELD NAME="hint" TYPE="text" NOTNULL="false" SEQUENCE="false"/> 
         <!-- Required text field where will be provided the script that generates the expected result data. -->
-        <FIELD NAME="resultdata" TYPE="longtext" NOTNULL="true" SEQUENCE="false"/> 
+        <FIELD NAME="resultdata" TYPE="text" NOTNULL="true" SEQUENCE="false"/> 
         <!-- Required text field where will be provided the subjective difficulty -->
         <FIELD NAME="subjectivedifficulty" TYPE="text" NOTNULL="true" SEQUENCE="false"/>
         <!-- Required text field where will be provided the objective difficulty -->
@@ -32,7 +32,7 @@
         <!-- Required decimal field to set the limit of decreasing -->
         <FIELD NAME="mingrade" TYPE="float" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="The grade limit to which the grade can be decremented."/>
         <!-- Required text field where will be provided the SQL question answer. -->
-        <FIELD NAME="solution" TYPE="longtext" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="solution" TYPE="text" NOTNULL="true" SEQUENCE="false"/>
       </FIELDS>
       <KEYS>
         <!-- Primary key for the table -->
