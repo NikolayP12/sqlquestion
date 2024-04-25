@@ -27,7 +27,10 @@ defined('MOODLE_INTERNAL') || die();
 
 // Name strings
 $string['relatedconcepts'] = 'Conceptos Relacionados';
+$string['relationalschema'] = 'Código que contextualiza el esquema de la base de datos';
 $string['data'] = 'Código que contextualiza la base de datos';
+$string['sqlcheck'] = 'SQL check';
+$string['sqlcheckrun'] = 'SQL check run';
 $string['hint'] = 'Code: Pistas para resolver el ejercicio';
 $string['solution'] = 'Solución';
 $string['resultdata'] = 'Script Result Data';
@@ -38,7 +41,10 @@ $string['mingrade'] = 'Nota mínima obtenible';
 
 // Helpful strings
 $string['relatedconcepts_help'] = 'En este campo deben escribirse aquellos conceptos con los que está estrechamente relacionado el ejercicio, y que previamente han sido definidos en el módulo de Base de Datos de Moodle.';
+$string['relationalschema_help'] = 'En este campo se almacena el esquema que contextualiza la base de datos para la pregunta.';
 $string['data_help'] = 'En este campo se debe adjuntar el código que debe ser previamente ejecutado para la contextualización de la base de datos para la correcta realización del ejercicio. Por ejemplo: CREATE TABLE Libros (...) y/o INSERT INTO Libros (ID_Libro, Titulo, Autor) VALUES...';
+$string['sqlcheck_help'] = 'Campo para activar el disparador creado por el alumno y comprobar que funciona.';
+$string['sqlcheckrun_help'] = 'Campo que contiene la función que verifica que el disparador creado por el alumno funciona.';
 $string['hint_help'] = 'En este campo se pueden escribir pistas que pueden consultar los alumnos para poder resolver el ejercicio.';
 $string['resultdata_help'] = 'En este campo se debe adjuntar el código que generará las tablas esperadas como solución, como un script sql.  Por ejemplo: SELECT * FROM coches.';
 $string['subjectivedifficulty_help'] = 'En este campo se describe la dificultad subjetiva que ha considerado el profesor para el ejercicio.';
@@ -59,7 +65,10 @@ $string['error_solution_empty'] = 'El campo solución no puede estar vacío.';
 // Statement strings
 $string['statement_title'] = 'Enunciando del ejercicio:';
 $string['statement_concepts'] = 'Conceptos relacionados con el ejercicio:';
+$string['statement_relationalschema'] = 'Relational Schema para el ejercicio:';
 $string['statement_data'] = 'Script que genera la base de datos:';
+$string['statement_sqlcheck'] = 'SQL Check:';
+$string['statement_sqlcheckrun'] = 'SQL Check Run:';
 $string['statement_hint'] = 'Pistas para resolver el ejercicio:';
 $string['statement_resultdata'] = 'Result Data para resolver el ejercicio:';
 $string['statement_subjectivedifficulty'] = 'Dificultad subjetiva del ejercicio:';
@@ -69,7 +78,11 @@ $string['statement_mingrade'] = 'Nota mínima obtenible en el ejercicio:';
 $string['statement_solution'] = 'Solución del ejercicio:';
 
 // Strings for restoring information
+$string['relatedconcepts_no_present'] = 'Conceptos Relacionados no presentes';
+$string['relationalschema_no_present'] = 'Relational Schema no presente.';
 $string['data_no_present'] = 'Script no presente.';
+$string['sqlcheck_no_present'] = 'SQL check no presente.';
+$string['sqlcheckrun_no_present'] = 'SQL check run no presente.';
 $string['hint_no_present'] = 'Pistas no presentes.';
 $string['resultdata_no_present'] = 'Result data no presente.';
 $string['subjectivedifficulty_no_present'] = 'Dificultad subjetiva no presente.';
