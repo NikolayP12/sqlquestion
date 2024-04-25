@@ -27,7 +27,10 @@ defined('MOODLE_INTERNAL') || die();
 
 // Name strings
 $string['relatedconcepts'] = 'Related Concepts';
-$string['data'] = 'Code that contextualizes the database';
+$string['relationalschema'] = 'Code that contextualizes the schema of the database';
+$string['data'] = 'Code that fills the database';
+$string['sqlcheck'] = 'SQL check';
+$string['sqlcheckrun'] = 'SQL check run';
 $string['hint'] = 'Code hint for solving the exercise';
 $string['solution'] = 'Solution';
 $string['resultdata'] = 'Script Result Data';
@@ -38,7 +41,10 @@ $string['mingrade'] = 'Minimum grade';
 
 // Helpful strings
 $string['relatedconcepts_help'] = 'In this field can be written those concepts to which the exercise is closely related, and that have been previously defined in the Moodle Database module.';
+$string['relationalschema_help'] = 'In this field is stored the schema that contextualize the database for the question.';
 $string['data_help'] = 'In this field you can attach the code that must be previously executed for the contextualization of the database for the correct execution of the exercise. For example: CREATE TABLE Books (...) and/or INSERT INTO Books (ID_Book, Title, Autor) VALUES...';
+$string['sqlcheck_help'] = 'Field to trigger the trigger created by the student and check that it works.';
+$string['sqlcheckrun_help'] = 'Field that contains the function that verifies that the trigger created by the student works.';
 $string['hint_help'] = 'In this field can be written hints that can be consulted by the students in order to solve the exercise.';
 $string['resultdata_help'] = 'In this field you must attach the code that will generate the expected tables as a solution, as a sql script. For example: SELECT * FROM cars.';
 $string['subjectivedifficulty_help'] = 'In this field is described the subjective difficulty that the teacher has considered for the exercise.';
@@ -49,6 +55,9 @@ For example: If a reduction per attempt of 0.25 has been defined, and a minimum 
 $string['solution_help'] = 'In this field you must attach the solution in code form, as a sql script. For example: SELECT * FROM cars.';
 
 // Error strings
+//$string['error_relationalschema_empty'] = 'Relational Schema field can not be empty.';
+//$string['error_sqlcheck_empty'] = 'SQL check field can not be empty.';
+//$string['error_sqlcheckrun_empty'] = 'SQL check run field can not be empty.';
 $string['error_resultdata_empty'] = 'Result data field can not be empty.';
 $string['error_subjectivedifficulty_empty'] = 'Subjective difficulty field can not be empty.';
 $string['error_objectivedifficulty_empty'] = 'Objective difficulty field can not be empty.';
@@ -59,7 +68,10 @@ $string['error_solution_empty'] = 'Solution field can not be empty.';
 // Statement strings
 $string['statement_title'] = 'Statement of the exercise:';
 $string['statement_concepts'] = 'Related concepts with the exercise:';
+$string['statement_relationalschema'] = 'Relational Schema of the exercise:';
 $string['statement_data'] = 'Script that generates the data base:';
+$string['statement_sqlcheck'] = 'SQL Check:';
+$string['statement_sqlcheckrun'] = 'SQL Check Run:';
 $string['statement_hint'] = 'Hint for solving the exercise:';
 $string['statement_resultdata'] = 'Result Data for solving the exercise:';
 $string['statement_subjectivedifficulty'] = 'Subjective difficulty of the exercise:';
@@ -69,7 +81,11 @@ $string['statement_mingrade'] = 'Minimun grade of the exercise:';
 $string['statement_solution'] = 'Solution of the exercise:';
 
 // Strings for restoring information
+$string['relatedconcepts_no_present'] = 'Related Concepts no present.';
+$string['relationalschema_no_present'] = 'Relational Schema no present.';
 $string['data_no_present'] = 'Script no present.';
+$string['sqlcheck_no_present'] = 'SQL check no present.';
+$string['sqlcheckrun_no_present'] = 'SQL check run no present.';
 $string['hint_no_present'] = 'Hint no present.';
 $string['resultdata_no_present'] = 'Resultdata no present.';
 $string['subjectivedifficulty_no_present'] = 'Subjective difficulty no present.';

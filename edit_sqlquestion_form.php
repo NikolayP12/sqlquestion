@@ -45,10 +45,27 @@ class qtype_sqlquestion_edit_form extends question_edit_form
         $mform->setType('relatedconcepts', PARAM_TEXT);
         $mform->addHelpButton('relatedconcepts', 'relatedconcepts', 'qtype_sqlquestion');
 
+        $mform->addElement('textarea', 'relationalschema', get_string('relationalschema', 'qtype_sqlquestion'), array('rows' => 15, 'cols' => 80));
+        $mform->setType('relationalschema', PARAM_RAW);
+        //$mform->addRule('relationalschema', get_string('required'), 'required', null, 'client');
+        $mform->addHelpButton('relationalschema', 'relationalschema', 'qtype_sqlquestion');
+
         // Field for entering the SQL code needed for the question.
         $mform->addElement('textarea', 'data', get_string('data', 'qtype_sqlquestion'), array('rows' => 15, 'cols' => 80));
         $mform->setType('data', PARAM_RAW);
         $mform->addHelpButton('data', 'data', 'qtype_sqlquestion');
+
+        // Field for entering the SQL check.
+        $mform->addElement('textarea', 'sqlcheck', get_string('sqlcheck', 'qtype_sqlquestion'), array('rows' => 15, 'cols' => 80));
+        $mform->setType('sqlcheck', PARAM_RAW);
+        //$mform->addRule('sqlcheck', get_string('required'), 'required', null, 'client');
+        $mform->addHelpButton('sqlcheck', 'sqlcheck', 'qtype_sqlquestion');
+
+        // Field for entering the SQL check run.
+        $mform->addElement('textarea', 'sqlcheckrun', get_string('sqlcheckrun', 'qtype_sqlquestion'), array('rows' => 15, 'cols' => 80));
+        $mform->setType('sqlcheckrun', PARAM_RAW);
+        //$mform->addRule('sqlcheckrun', get_string('required'), 'required', null, 'client');
+        $mform->addHelpButton('sqlcheckrun', 'sqlcheckrun', 'qtype_sqlquestion');
 
         // Field for entering hint for students.
         $mform->addElement('textarea', 'hint', get_string('hint', 'qtype_sqlquestion'), array('rows' => 15, 'cols' => 80));
@@ -72,7 +89,6 @@ class qtype_sqlquestion_edit_form extends question_edit_form
         $mform->setType('subjectivedifficulty', PARAM_TEXT);
         $mform->addRule('subjectivedifficulty', get_string('required'), 'required', null, 'client');
         $mform->addHelpButton('subjectivedifficulty', 'subjectivedifficulty', 'qtype_sqlquestion');
-
 
         // Field for entering the decrease amount per attempt
         $mform->addElement('text', 'decreaseattempt', get_string('decreaseattempt', 'qtype_sqlquestion'));
@@ -110,7 +126,7 @@ class qtype_sqlquestion_edit_form extends question_edit_form
 
         // Load existing data into form fields, if it's available.
         if (!empty($question->options)) {
-            foreach (['relatedconcepts', 'data', 'hint', 'resultdata', 'subjectivedifficulty', 'objectivedifficulty', 'decreaseattempt', 'mingrade', 'solution'] as $field) {
+            foreach (['relatedconcepts', 'relationalschema', 'data', 'sqlcheck', 'sqlcheckrun', 'hint', 'resultdata', 'subjectivedifficulty', 'objectivedifficulty', 'decreaseattempt', 'mingrade', 'solution'] as $field) {
                 if (isset($question->options->$field)) {
                     $question->$field = $question->options->$field;
                 }
@@ -134,9 +150,15 @@ class qtype_sqlquestion_edit_form extends question_edit_form
     {
         $errors = parent::validation($data, $files);
 
-        if (trim($data['resultdata']) === '') {
-            $errors['resultdata'] = get_string('error_resultdata_empty', 'qtype_sqlquestion');
-        }
+        // if (trim($data['relationalschema']) === '') {
+        //     $errors['relationalschema'] = get_string('error_relationalschema_empty', 'qtype_sqlquestion');
+        // }
+        // if (trim($data['sqlcheck']) === '') {
+        //     $errors['sqlcheck'] = get_string('error_sqlcheck_empty', 'qtype_sqlquestion');
+        // }
+        // if (trim($data['sqlcheckrun']) === '') {
+        //     $errors['sqlcheckrun'] = get_string('error_sqlcheckrun_empty', 'qtype_sqlquestion');
+        // }
         if (trim($data['subjectivedifficulty']) === '') {
             $errors['subjectivedifficulty'] = get_string('error_subjectivedifficulty_empty', 'qtype_sqlquestion');
         }

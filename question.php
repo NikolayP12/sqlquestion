@@ -35,7 +35,10 @@ class qtype_sqlquestion_question extends question_graded_automatically
 
     public $responseformat;
     public $relatedconcepts;
+    public $relationalschema;
     public $data;
+    public $sqlcheck;
+    public $sqlcheckrun;
     public $hint;
     public $resultdata;
     public $subjectivedifficulty;

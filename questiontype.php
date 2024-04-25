@@ -59,7 +59,10 @@ class qtype_sqlquestion extends question_type
 
         // Assign the retrieved data to the question object's "options" property.
         $question->options->relatedconcepts = $options->relatedconcepts;
+        $question->options->relationalschema = $options->relationalschema;
         $question->options->data = $options->data;
+        $question->options->sqlcheck = $options->sqlcheck;
+        $question->options->sqlcheckrun = $options->sqlcheckrun;
         $question->options->hint = $options->hint;
         $question->options->resultdata = $options->resultdata;
         $question->options->subjectivedifficulty = $options->subjectivedifficulty;
@@ -87,7 +90,10 @@ class qtype_sqlquestion extends question_type
         $options = new stdClass();
         $options->questionid = $question->id;
         $options->relatedconcepts = $question->relatedconcepts;
+        $options->relationalschema = $question->relationalschema;
         $options->data = $question->data;
+        $options->sqlcheck = $question->sqlcheck;
+        $options->sqlcheckrun = $question->sqlcheckrun;
         $options->hint = $question->hint;
         $options->resultdata = $question->resultdata;
         $options->subjectivedifficulty = $question->subjectivedifficulty;
@@ -123,7 +129,10 @@ class qtype_sqlquestion extends question_type
         parent::initialise_question_instance($question, $questiondata);
 
         $question->relatedconcepts = $questiondata->options->relatedconcepts;
+        $question->relationalschema =  $questiondata->options->relationalschema;
         $question->data = $questiondata->options->data;
+        $question->sqlcheck = $questiondata->options->sqlcheck;
+        $question->sqlcheckrun = $questiondata->options->sqlcheckrun;
         $question->hint = $questiondata->options->hint;
         $question->resultdata = $questiondata->options->resultdata;
         $question->subjectivedifficulty = $questiondata->options->subjectivedifficulty;
