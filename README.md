@@ -6,8 +6,8 @@ The plugin needs to be installed by putting the contents of this directory to
 
     {your/moodle/dirroot}/question/type/
 
-Afterwards, log in to your Moodle site as an admin and go to _Site administration >
-Notifications_ to complete the installation.
+Afterwards, log in to your Moodle site as an admin and go to \_Site administration >
+\_Notifications to complete the installation.
 
 ## Instalation of the personalized quiz module
 
