@@ -27,8 +27,8 @@ defined('MOODLE_INTERNAL') || die();
 
 // Name strings
 $string['relatedconcepts'] = 'Conceptos Relacionados';
-$string['relationalschema'] = 'Relational Schema: Código que contextualiza el esquema de la base de datos';
-$string['data'] = 'Data: Código que contextualiza la base de datos';
+$string['relationalschema'] = 'Relational Schema';
+$string['data'] = 'Data';
 $string['sqlcheck'] = 'SQL check';
 $string['sqlcheckrun'] = 'SQL check run';
 $string['code'] = 'Code: Pistas para resolver el ejercicio';
@@ -42,7 +42,7 @@ $string['mingrade'] = 'Nota mínima obtenible';
 // Helpful strings
 $string['relatedconcepts_help'] = 'En este campo deben escribirse aquellos conceptos con los que está estrechamente relacionado el ejercicio, y que previamente han sido definidos en el módulo de Base de Datos de Moodle.';
 $string['relationalschema_help'] = 'En este campo se almacena el esquema que contextualiza la base de datos para la pregunta.';
-$string['data_help'] = 'En este campo se debe adjuntar el código que debe ser previamente ejecutado para la contextualización de la base de datos para la correcta realización del ejercicio. Por ejemplo: CREATE TABLE Libros (...) y/o INSERT INTO Libros (ID_Libro, Titulo, Autor) VALUES...';
+$string['data_help'] = 'En este campo se debe adjuntar el código que debe ser previamente ejecutado para la contextualización de la base de datos para la correcta realización del ejercicio. Por ejemplo: INSERT INTO Libros (ID_Libro, Titulo, Autor) VALUES...';
 $string['sqlcheck_help'] = 'Campo para activar el disparador creado por el alumno y comprobar que funciona.';
 $string['sqlcheckrun_help'] = 'Campo que contiene la función que verifica que el disparador creado por el alumno funciona.';
 $string['code_help'] = 'En este campo se pueden escribir pistas que pueden consultar los alumnos para poder resolver el ejercicio.';

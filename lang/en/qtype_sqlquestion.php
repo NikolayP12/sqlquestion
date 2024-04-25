@@ -27,8 +27,8 @@ defined('MOODLE_INTERNAL') || die();
 
 // Name strings
 $string['relatedconcepts'] = 'Related Concepts';
-$string['relationalschema'] = 'Relational Schema: Code that contextualizes the schema of the database';
-$string['data'] = 'Data: Code that fills the database';
+$string['relationalschema'] = 'Relational Schema';
+$string['data'] = 'Data';
 $string['sqlcheck'] = 'SQL check';
 $string['sqlcheckrun'] = 'SQL check run';
 $string['code'] = 'Code code for solving the exercise';
@@ -42,7 +42,7 @@ $string['mingrade'] = 'Minimum grade';
 // Helpful strings
 $string['relatedconcepts_help'] = 'In this field can be written those concepts to which the exercise is closely related, and that have been previously defined in the Moodle Database module.';
 $string['relationalschema_help'] = 'In this field is stored the schema that contextualize the database for the question.';
-$string['data_help'] = 'In this field you can attach the code that must be previously executed for the contextualization of the database for the correct execution of the exercise. For example: CREATE TABLE Books (...) and/or INSERT INTO Books (ID_Book, Title, Autor) VALUES...';
+$string['data_help'] = 'In this field you can attach the code that must be previously executed for the contextualization of the database for the correct execution of the exercise. For example: INSERT INTO Books (ID_Book, Title, Autor) VALUES...';
 $string['sqlcheck_help'] = 'Field to trigger the trigger created by the student and check that it works.';
 $string['sqlcheckrun_help'] = 'Field that contains the function that verifies that the trigger created by the student works.';
 $string['code_help'] = 'In this field can be written codes that can be consulted by the students in order to solve the exercise.';
