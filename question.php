@@ -39,7 +39,7 @@ class qtype_sqlquestion_question extends question_graded_automatically
     public $data;
     public $sqlcheck;
     public $sqlcheckrun;
-    public $hint;
+    public $code;
     public $resultdata;
     public $subjectivedifficulty;
     public $objectivedifficulty;

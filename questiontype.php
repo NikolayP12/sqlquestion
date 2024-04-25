@@ -63,7 +63,7 @@ class qtype_sqlquestion extends question_type
         $question->options->data = $options->data;
         $question->options->sqlcheck = $options->sqlcheck;
         $question->options->sqlcheckrun = $options->sqlcheckrun;
-        $question->options->hint = $options->hint;
+        $question->options->code = $options->code;
         $question->options->resultdata = $options->resultdata;
         $question->options->subjectivedifficulty = $options->subjectivedifficulty;
         $question->options->objectivedifficulty = $options->objectivedifficulty;
@@ -94,7 +94,7 @@ class qtype_sqlquestion extends question_type
         $options->data = $question->data;
         $options->sqlcheck = $question->sqlcheck;
         $options->sqlcheckrun = $question->sqlcheckrun;
-        $options->hint = $question->hint;
+        $options->code = $question->code;
         $options->resultdata = $question->resultdata;
         $options->subjectivedifficulty = $question->subjectivedifficulty;
         $options->objectivedifficulty = $question->objectivedifficulty;
@@ -133,7 +133,7 @@ class qtype_sqlquestion extends question_type
         $question->data = $questiondata->options->data;
         $question->sqlcheck = $questiondata->options->sqlcheck;
         $question->sqlcheckrun = $questiondata->options->sqlcheckrun;
-        $question->hint = $questiondata->options->hint;
+        $question->code = $questiondata->options->code;
         $question->resultdata = $questiondata->options->resultdata;
         $question->subjectivedifficulty = $questiondata->options->subjectivedifficulty;
         $question->objectivedifficulty = $questiondata->options->objectivedifficulty;

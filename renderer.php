@@ -87,10 +87,10 @@ class qtype_sqlquestion_renderer extends qtype_renderer
             $output .= html_writer::tag('pre', s($question->sqlcheckrun), array('class' => 'sqlquestion_sqlcheckrun'));
         }
 
-        if (!empty($question->hint)) {
-            // Displays the hint for solving the question.
-            $output .= html_writer::tag('h3', get_string('statement_hint', 'qtype_sqlquestion'), array('class' => 'sqlquestion_heading'));
-            $output .= html_writer::tag('div', format_text($question->hint), array('class' => 'sqlquestion_hint'));
+        if (!empty($question->code)) {
+            // Displays the hint code for solving the question.
+            $output .= html_writer::tag('h3', get_string('statement_code', 'qtype_sqlquestion'), array('class' => 'sqlquestion_heading'));
+            $output .= html_writer::tag('div', format_text($question->code), array('class' => 'sqlquestion_code'));
         }
 
         // Displays the resultdata for solving the question.

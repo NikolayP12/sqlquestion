@@ -64,13 +64,13 @@ class restore_qtype_sqlquestion_plugin extends restore_qtype_plugin
         $data = (object)$data;
         $oldid = $data->id;
 
-        // Ensures that 'relatedconcepts', 'relationalschema', 'data', 'sqlcheck', 'sqlcheck' , 'sqlcheckrun' , 'hint', 'resultdata', 'subjectivedifficulty', 'objectivedifficulty', 'decreaseattempt', 'mingrade' and 'solution' fields have default values if they are null or not set.
+        // Ensures that 'relatedconcepts', 'relationalschema', 'data', 'sqlcheck', 'sqlcheck' , 'sqlcheckrun' , 'code', 'resultdata', 'subjectivedifficulty', 'objectivedifficulty', 'decreaseattempt', 'mingrade' and 'solution' fields have default values if they are null or not set.
         $data->relatedconcepts = $data->relatedconcepts ?? get_string('relatedconcepts_no_present', 'qtype_sqlquestion');
         $data->relationalschema = $data->relationalschema ?? get_string('relationalschema_no_present', 'qtype_sqlquestion');
         $data->data = $data->data ?? get_string('data_no_present', 'qtype_sqlquestion');
         $data->sqlcheck = $data->sqlcheck ?? get_string('sqlcheck_no_present', 'qtype_sqlquestion');
         $data->sqlcheckrun = $data->sqlcheckrun ?? get_string('sqlcheckrun_no_present', 'qtype_sqlquestion');
-        $data->hint = $data->hint ?? get_string('hint_no_present', 'qtype_sqlquestionRelational Schema');
+        $data->code = $data->code ?? get_string('code_no_present', 'qtype_sqlquestionRelational Schema');
         $data->resultdata = $data->resultdata ?? get_string('resultdata_no_present', 'qtype_sqlquestion');
         $data->subjectivedifficulty = $data->subjectivedifficulty ?? get_string('subjectivedifficulty_no_present', 'qtype_sqlquestion');
         $data->objectivedifficulty = $data->objectivedifficulty ?? get_string('objectivedifficulty_no_present', 'qtype_sqlquestion');

@@ -36,7 +36,7 @@ class backup_qtype_sqlquestion_plugin extends backup_qtype_plugin
      *
      * This method specifies the XML structure to be used for backing up
      * question-specific settings and user data associated with this question type.
-     * It includes information such as related concepts, data, hint, and solution.
+     * It includes information such as related concepts, data, code, and solution.
      *
      * @return backup_plugin_element The root element of the question type plugin structure.
      */
@@ -54,7 +54,7 @@ class backup_qtype_sqlquestion_plugin extends backup_qtype_plugin
 
         // Defines the nested element for the sqlquestion settings, specifying which fields to include.
         $sqlquestion = new backup_nested_element('sqlquestion', array('id'), array(
-            'relatedconcepts', 'relationalschema', 'data', 'sqlcheck', 'sqlcheckrun', 'hint', 'resultdata', 'subjectivedifficulty', 'objectivedifficulty', 'decreaseattempt', 'mingrade', 'solution'
+            'relatedconcepts', 'relationalschema', 'data', 'sqlcheck', 'sqlcheckrun', 'code', 'resultdata', 'subjectivedifficulty', 'objectivedifficulty', 'decreaseattempt', 'mingrade', 'solution'
         ));
 
         // Attaches the sqlquestion element to the wrapper.

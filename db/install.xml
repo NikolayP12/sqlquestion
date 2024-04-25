@@ -25,8 +25,8 @@
         <FIELD NAME="sqlcheck" TYPE="text" LENGTH="big" NOTNULL="false" SEQUENCE="false"/>
         <!-- Optional field containing the function that verifies that the trigger created by the student works. Used for triggers. -->
         <FIELD NAME="sqlcheckrun" TYPE="text" LENGTH="big" NOTNULL="false" SEQUENCE="false"/>
-        <!-- Optional hint provided to the student for answering the question. -->
-        <FIELD NAME="hint" TYPE="text" LENGTH="big" NOTNULL="false" SEQUENCE="false"/> 
+        <!-- Optional code hint provided to the student for answering the question. -->
+        <FIELD NAME="code" TYPE="text" LENGTH="big" NOTNULL="false" SEQUENCE="false"/> 
         <!-- Required text field where will be provided the script that generates the expected result data. -->
         <FIELD NAME="resultdata" TYPE="text" LENGTH="big" NOTNULL="true" SEQUENCE="false"/> 
         <!-- Required text field where will be provided the subjective difficulty -->

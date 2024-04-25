@@ -65,7 +65,7 @@ When creating a SQLab question, you'll encounter the following fields:
 
 - **Data**: In this field you can attach the code that must be previously executed for the contextualization of the database for the correct execution of the exercise.
 
-- **Hint**: In this field can be written hints that can be consulted by the students in order to solve the exercise.
+- **Code**: In this field can be written hints that can be consulted by the students in order to solve the exercise.
 
 - **Result Data**: In this field you must attach the code that will generate the expected tables as a solution, as a sql script.
 

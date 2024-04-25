@@ -34,7 +34,7 @@ class qtype_sqlquestion_edit_form extends question_edit_form
      * Adds specific fields to the question editing form.
      * 
      * Defines and sets up the additional fields required,
-     * such as related concepts, data (script in SQL), hint, and the question's solution.
+     * such as related concepts, data (script in SQL), code, and the question's solution.
      *
      * @param MoodleQuickForm $mform The form being built.
      */
@@ -67,10 +67,10 @@ class qtype_sqlquestion_edit_form extends question_edit_form
         //$mform->addRule('sqlcheckrun', get_string('required'), 'required', null, 'client');
         $mform->addHelpButton('sqlcheckrun', 'sqlcheckrun', 'qtype_sqlquestion');
 
-        // Field for entering hint for students.
-        $mform->addElement('textarea', 'hint', get_string('hint', 'qtype_sqlquestion'), array('rows' => 15, 'cols' => 80));
-        $mform->setType('hint', PARAM_RAW);
-        $mform->addHelpButton('hint', 'hint', 'qtype_sqlquestion');
+        // Field for entering code for students.
+        $mform->addElement('textarea', 'code', get_string('code', 'qtype_sqlquestion'), array('rows' => 15, 'cols' => 80));
+        $mform->setType('code', PARAM_RAW);
+        $mform->addHelpButton('code', 'code', 'qtype_sqlquestion');
 
         // Field for entering the sript code that generates the result data for the question.
         $mform->addElement('textarea', 'resultdata', get_string('resultdata', 'qtype_sqlquestion'), array('rows' => 15, 'cols' => 80));
@@ -126,7 +126,7 @@ class qtype_sqlquestion_edit_form extends question_edit_form
 
         // Load existing data into form fields, if it's available.
         if (!empty($question->options)) {
-            foreach (['relatedconcepts', 'relationalschema', 'data', 'sqlcheck', 'sqlcheckrun', 'hint', 'resultdata', 'subjectivedifficulty', 'objectivedifficulty', 'decreaseattempt', 'mingrade', 'solution'] as $field) {
+            foreach (['relatedconcepts', 'relationalschema', 'data', 'sqlcheck', 'sqlcheckrun', 'code', 'resultdata', 'subjectivedifficulty', 'objectivedifficulty', 'decreaseattempt', 'mingrade', 'solution'] as $field) {
                 if (isset($question->options->$field)) {
                     $question->$field = $question->options->$field;
                 }
