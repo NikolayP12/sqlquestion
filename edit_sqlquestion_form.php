@@ -52,24 +52,24 @@ class qtype_sqlquestion_edit_form extends question_edit_form
 
         // Field for entering hint for students.
         $mform->addElement('textarea', 'hint', get_string('hint', 'qtype_sqlquestion'), array('rows' => 15, 'cols' => 80));
-        $mform->setType('hint', PARAM_TEXT);
+        $mform->setType('hint', PARAM_RAW);
         $mform->addHelpButton('hint', 'hint', 'qtype_sqlquestion');
 
         // Field for entering the sript code that generates the result data for the question.
         $mform->addElement('textarea', 'resultdata', get_string('resultdata', 'qtype_sqlquestion'), array('rows' => 15, 'cols' => 80));
-        $mform->setType('data', PARAM_RAW);
+        $mform->setType('resultdata', PARAM_RAW);
         $mform->addRule('resultdata', get_string('required'), 'required', null, 'client');
         $mform->addHelpButton('resultdata', 'resultdata', 'qtype_sqlquestion');
 
         // Field for entering the SQL code objective difficulty.
         $mform->addElement('textarea', 'objectivedifficulty', get_string('objectivedifficulty', 'qtype_sqlquestion'), array('rows' => 2, 'cols' => 10));
-        $mform->setType('data', PARAM_TEXT);
+        $mform->setType('objectivedifficulty', PARAM_TEXT);
         $mform->addRule('objectivedifficulty', get_string('required'), 'required', null, 'client');
         $mform->addHelpButton('objectivedifficulty', 'objectivedifficulty', 'qtype_sqlquestion');
 
         // Field for entering the SQL code subjetive difficulty.
         $mform->addElement('textarea', 'subjectivedifficulty', get_string('subjectivedifficulty', 'qtype_sqlquestion'), array('rows' => 2, 'cols' => 10));
-        $mform->setType('data', PARAM_TEXT);
+        $mform->setType('subjectivedifficulty', PARAM_TEXT);
         $mform->addRule('subjectivedifficulty', get_string('required'), 'required', null, 'client');
         $mform->addHelpButton('subjectivedifficulty', 'subjectivedifficulty', 'qtype_sqlquestion');
 
