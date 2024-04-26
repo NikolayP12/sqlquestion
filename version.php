@@ -25,7 +25,7 @@
 defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'qtype_sqlquestion';
-$plugin->release = '1.3.1';
-$plugin->version = 2024042303;
+$plugin->release = '1.3.2';
+$plugin->version = 2024042600;
 $plugin->requires = 2022112800;
 $plugin->maturity = MATURITY_STABLE;

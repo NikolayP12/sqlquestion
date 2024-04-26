@@ -41,7 +41,7 @@ $string['mingrade'] = 'Nota mínima obtenible';
 
 // Helpful strings
 $string['relatedconcepts_help'] = 'En este campo deben escribirse aquellos conceptos con los que está estrechamente relacionado el ejercicio, y que previamente han sido definidos en el módulo de Base de Datos de Moodle.';
-$string['relationalschema_help'] = 'En este campo se almacena el esquema que contextualiza la base de datos para la pregunta.';
+$string['relationalschema_help'] = 'En este campo se almacena el esquema que contextualiza la base de datos para la pregunta. Por ejemplo: CREATE TABLE Libros (...);';
 $string['data_help'] = 'En este campo se debe adjuntar el código que debe ser previamente ejecutado para la contextualización de la base de datos para la correcta realización del ejercicio. Por ejemplo: INSERT INTO Libros (ID_Libro, Titulo, Autor) VALUES...';
 $string['sqlcheck_help'] = 'Este campo contiene el código que prepara el entorno de la base de datos para probar disparadores. Incluye cualquier configuración o datos necesarios que activen el disparador creado por el alumno, como inserciones o actualizaciones específicas que esperan ser controladas por el disparador.';
 $string['sqlcheckrun_help'] = 'Este campo contiene el código que ejecuta las operaciones de prueba para evaluar el funcionamiento del disparador creado por el alumno. Debe incluir consultas o comandos SQL que prueban la lógica del disparador, asegurando que la respuesta del sistema a estas operaciones sea la adecuada y conforme a lo esperado.';

@@ -41,7 +41,7 @@ $string['mingrade'] = 'Minimum grade';
 
 // Helpful strings
 $string['relatedconcepts_help'] = 'In this field can be written those concepts to which the exercise is closely related, and that have been previously defined in the Moodle Database module.';
-$string['relationalschema_help'] = 'In this field is stored the schema that contextualize the database for the question.';
+$string['relationalschema_help'] = 'In this field is stored the schema that contextualize the database for the question. For example: CREATE TABLE Books (...);';
 $string['data_help'] = 'In this field you can attach the code that must be previously executed for the contextualization of the database for the correct execution of the exercise. For example: INSERT INTO Books (ID_Book, Title, Autor) VALUES...';
 $string['sqlcheck_help'] = 'In this field you can attach the code that prepares the database environment for testing the trigger. It includes any setups or data necessary to activate the trigger created by the student, such as specific insertions or updates that are expected to be controlled by the trigger.';
 $string['sqlcheckrun_help'] = 'In this field you can attach the code that executes test operations to evaluate the performance of the trigger created by the student. It should include queries or SQL commands that test the logic of the trigger, ensuring that the system response to these operations is appropriate and as expected.';

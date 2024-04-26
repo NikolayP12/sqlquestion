@@ -63,7 +63,13 @@ When creating a SQLab question, you'll encounter the following fields:
 
 - **Related Concepts**: In this field can be written those concepts to which the exercise is closely related, and that have been previously defined in the Moodle Database modules.
 
+- **Relational Schema**: In this field is stored the schema that contextualize the database for the question.
+
 - **Data**: In this field you can attach the code that must be previously executed for the contextualization of the database for the correct execution of the exercise.
+
+- **SQL check**: In this field you can attach the code that prepares the database environment for testing the trigger. It includes any setups or data necessary to activate the trigger created by the student, such as specific insertions or updates that are expected to be controlled by the trigger.
+
+- **SQL check run**: In this field you can attach the code that executes test operations to evaluate the performance of the trigger created by the student. It should include queries or SQL commands that test the logic of the trigger, ensuring that the system response to these operations is appropriate and as expected.
 
 - **Code**: In this field can be written hints that can be consulted by the students in order to solve the exercise.
 
