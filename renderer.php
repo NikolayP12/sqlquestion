@@ -69,21 +69,18 @@ class qtype_sqlquestion_renderer extends qtype_renderer
         if (!empty($question->data)) {
             // Displays the data section, typically containing SQL code.
             $output .= html_writer::tag('h3', get_string('statement_data', 'qtype_sqlquestion'), array('class' => 'sqlquestion_heading'));
-            // Use of <pre> to preserve formatting of the code.
             $output .= html_writer::tag('pre', s($question->data), array('class' => 'sqlquestion_data'));
         }
 
         if (!empty($question->sqlcheck)) {
             // Displays the sqlcheck section, typically containing SQL code.
             $output .= html_writer::tag('h3', get_string('statement_sqlcheck', 'qtype_sqlquestion'), array('class' => 'sqlquestion_heading'));
-            // Use of <pre> to preserve formatting of the code.
             $output .= html_writer::tag('pre', s($question->sqlcheck), array('class' => 'sqlquestion_sqlcheck'));
         }
 
         if (!empty($question->sqlcheckrun)) {
             // Displays the sqlcheckrun section, typically containing SQL code.
             $output .= html_writer::tag('h3', get_string('statement_sqlcheckrun', 'qtype_sqlquestion'), array('class' => 'sqlquestion_heading'));
-            // Use of <pre> to preserve formatting of the code.
             $output .= html_writer::tag('pre', s($question->sqlcheckrun), array('class' => 'sqlquestion_sqlcheckrun'));
         }
 
@@ -109,7 +106,7 @@ class qtype_sqlquestion_renderer extends qtype_renderer
         $output .= html_writer::tag('h3', get_string('statement_decreaseattempt', 'qtype_sqlquestion'), array('class' => 'sqlquestion_heading'));
         $output .= html_writer::tag('div', format_text($question->decreaseattempt), array('class' => 'sqlquestion_decreaseattempt'));
 
-        // Displays the mingrade set the limit of decreasing
+        // Displays the mingrade set the limit of decreasing.
         $output .= html_writer::tag('h3', get_string('statement_mingrade', 'qtype_sqlquestion'), array('class' => 'sqlquestion_heading'));
         $output .= html_writer::tag('div', format_text($question->mingrade), array('class' => 'sqlquestion_mingrade'));
 
