@@ -1,4 +1,4 @@
-# SQLab question
+# SQL question
 
 ## Instalation of the plugin sqlquestion
 
@@ -51,15 +51,15 @@ the field can be found as "Quiz id".
 
 ## Configuration and Usage
 
-Once the plugin is installed, you can start creating a SQLab question from the question bank.
+Once the plugin is installed, you can start creating a SQL question from the question bank.
 Go to your _Course > Question bank_ and select the option to create a new question.
-Choose 'SQLab question' from the list of question types.
+Choose 'SQL question' from the list of question types.
 
 Once you have started creating a new question you will have to enter information at least within the fields
 specified as mandatory, the mandatory fields are marked and all have a help element with additional information
 on what their purpose is.
 
-When creating a SQLab question, you'll encounter the following fields:
+When creating a SQL question, you'll encounter the following fields:
 
 - **Related Concepts**: In this field can be written those concepts to which the exercise is closely related, and that have been previously defined in the Moodle Database modules.
 
@@ -87,4 +87,4 @@ When creating a SQLab question, you'll encounter the following fields:
 
 ## Support
 
-For questions or issues regarding the SQLab question type, please send an email to the plugin maintainer at nikolaypn2002@gmail.com.
+For questions or issues regarding the SQL question type, please send an email to the plugin maintainer at nikolaypn2002@gmail.com.
