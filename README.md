@@ -6,8 +6,8 @@ The plugin needs to be installed by putting the contents of this directory to
 
     {your/moodle/dirroot}/question/type/
 
-Afterwards, log in to your Moodle site as an admin and go to \_Site administration >
-\_Notifications to complete the installation.
+Afterwards, log in to your Moodle site as an admin and go to /Site administration >
+/Notifications to complete the installation.
 
 ## Instalation of the personalized quiz module
 
@@ -20,7 +20,7 @@ Download it from:
 
     <https://github.com/NikolayP12/quiz.git>
 
-Moodle will not detect any changes because only an id field will have been added
+Moodle will not detect any changes because only an ID field will have been added
 in the questionnaire configuration section.
 
 ## License
@@ -42,18 +42,18 @@ If not, see <https://www.gnu.org/licenses/>.
 ## Purpose
 
 The purpose of this "question type" plugin is to be used to create a bank of questions for the "SQLab" plugin.
-These questions will be retrieved by the "SQLab" plugin from the id of the questionnaire to which
+These questions will be retrieved by the "SQLab" plugin using the ID of the questionnaire to which
 the created questions are associated.
-In order to know the id of the questionnaires it is necessary to follow the steps of installation
-of the custom questionnaire module, as explained above. The id of the questionnaire can be identified
+In order to know the ID of the questionnaires it is necessary to follow the steps of installation
+of the custom questionnaire module, as explained above. The ID of the questionnaire can be identified
 in the configuration section of the created quiz, under the field that contains the quiz name,
-the field can be found as "Quiz id".
+the field can be found as "Quiz ID".
 
 ## Configuration and Usage
 
 Once the plugin is installed, you can start creating a SQL question from the question bank.
-Go to your _Course > Question bank_ and select the option to create a new question.
-Choose 'SQL question' from the list of question types.
+Go to your /Course > /Question bank and select the option to create a new question.
+Choose "SQL question" from the list of question types.
 
 Once you have started creating a new question you will have to enter information at least within the fields
 specified as mandatory, the mandatory fields are marked and all have a help element with additional information
@@ -73,7 +73,7 @@ When creating a SQL question, you'll encounter the following fields:
 
 - **Code**: In this field can be written hints that can be consulted by the students in order to solve the exercise.
 
-- **Result Data**: In this field you must attach the code that will generate the expected tables as a solution, as a sql script.
+- **Result Data**: In this field you can attach the code that will generate the expected tables as a solution, as a sql script.
 
 - **Subjective Difficulty**: In this field is described the subjective difficulty that the teacher has considered for the exercise.
 
@@ -83,7 +83,11 @@ When creating a SQL question, you'll encounter the following fields:
 
 - **Min Grade**: This field defines the grade from which the reduction per attempt will not continue to be subtracted from the student, for each executed sentence.
 
-- **Solution**: In this field you must attach the solution in code form, as a sql script. It has to be added as a SQL script.
+- **Solution**: In this field you must attach the solution in code form, as a sql script.
+
+The "SQLab" plugin can be find in this url:
+
+    https://github.com/josefernandez02/sqlab.git
 
 ## Support
 
