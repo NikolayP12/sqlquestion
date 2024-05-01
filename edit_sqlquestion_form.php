@@ -59,13 +59,11 @@ class qtype_sqlquestion_edit_form extends question_edit_form
         // Field for entering the SQL check.
         $mform->addElement('textarea', 'sqlcheck', get_string('sqlcheck', 'qtype_sqlquestion'), array('rows' => 15, 'cols' => 80));
         $mform->setType('sqlcheck', PARAM_RAW);
-        //$mform->addRule('sqlcheck', get_string('required'), 'required', null, 'client');
         $mform->addHelpButton('sqlcheck', 'sqlcheck', 'qtype_sqlquestion');
 
         // Field for entering the SQL check run.
         $mform->addElement('textarea', 'sqlcheckrun', get_string('sqlcheckrun', 'qtype_sqlquestion'), array('rows' => 15, 'cols' => 80));
         $mform->setType('sqlcheckrun', PARAM_RAW);
-        //$mform->addRule('sqlcheckrun', get_string('required'), 'required', null, 'client');
         $mform->addHelpButton('sqlcheckrun', 'sqlcheckrun', 'qtype_sqlquestion');
 
         // Field for entering code for students.
@@ -151,15 +149,12 @@ class qtype_sqlquestion_edit_form extends question_edit_form
     {
         $errors = parent::validation($data, $files);
 
-        // if (trim($data['relationalschema']) === '') {
-        //     $errors['relationalschema'] = get_string('error_relationalschema_empty', 'qtype_sqlquestion');
-        // }
-        // if (trim($data['sqlcheck']) === '') {
-        //     $errors['sqlcheck'] = get_string('error_sqlcheck_empty', 'qtype_sqlquestion');
-        // }
-        // if (trim($data['sqlcheckrun']) === '') {
-        //     $errors['sqlcheckrun'] = get_string('error_sqlcheckrun_empty', 'qtype_sqlquestion');
-        // }
+        if (trim($data['relationalschema']) === '') {
+            $errors['relationalschema'] = get_string('error_relationalschema_empty', 'qtype_sqlquestion');
+        }
+        if (trim($data['data']) === '') {
+            $errors['data'] = get_string('error_data_empty', 'qtype_sqlquestion');
+        }
         if (trim($data['subjectivedifficulty']) === '') {
             $errors['subjectivedifficulty'] = get_string('error_subjectivedifficulty_empty', 'qtype_sqlquestion');
         }

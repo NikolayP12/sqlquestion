@@ -55,9 +55,8 @@ For example: If a reduction per attempt of 0.25 has been defined, and a minimum 
 $string['solution_help'] = 'In this field you must attach the solution in code form, as a sql script. For example: SELECT * FROM cars.';
 
 // Error strings
-//$string['error_relationalschema_empty'] = 'Relational Schema field can not be empty.';
-//$string['error_sqlcheck_empty'] = 'SQL check field can not be empty.';
-//$string['error_sqlcheckrun_empty'] = 'SQL check run field can not be empty.';
+$string['error_relationalschema_empty'] = 'Relational schema field can not be empty.';
+$string['error_data_empty'] = 'Data field can not be empty.';
 $string['error_resultdata_empty'] = 'Result data field can not be empty.';
 $string['error_subjectivedifficulty_empty'] = 'Subjective difficulty field can not be empty.';
 $string['error_objectivedifficulty_empty'] = 'Objective difficulty field can not be empty.';

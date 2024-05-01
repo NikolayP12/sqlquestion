@@ -55,6 +55,8 @@ Por ejemplo: Si se ha definido una reducción por intento de 0.25, y la nota mí
 $string['solution_help'] = 'En este campo se debe adjuntar la solución en forma de código, como un script sql. Por ejemplo: SELECT * FROM coches.';
 
 // Error strings
+$string['error_relationalschema_empty'] = 'El campo relational schema no puede estar vacío.';
+$string['error_data_empty'] = 'El campo data no puede estar vacío.';
 $string['error_resultdata_empty'] = 'El campo result data no puede estar vacío.';
 $string['error_subjectivedifficulty_empty'] = 'El campo dificultad subjetiva no puede estar vacío.';
 $string['error_objectivedifficulty_empty'] = 'El campo dificultad objetiva no puede estar vacío.';
