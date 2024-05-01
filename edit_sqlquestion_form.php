@@ -47,12 +47,13 @@ class qtype_sqlquestion_edit_form extends question_edit_form
 
         $mform->addElement('textarea', 'relationalschema', get_string('relationalschema', 'qtype_sqlquestion'), array('rows' => 15, 'cols' => 80));
         $mform->setType('relationalschema', PARAM_RAW);
-        //$mform->addRule('relationalschema', get_string('required'), 'required', null, 'client');
+        $mform->addRule('relationalschema', get_string('required'), 'required', null, 'client');
         $mform->addHelpButton('relationalschema', 'relationalschema', 'qtype_sqlquestion');
 
         // Field for entering the SQL code needed for the question.
         $mform->addElement('textarea', 'data', get_string('data', 'qtype_sqlquestion'), array('rows' => 15, 'cols' => 80));
         $mform->setType('data', PARAM_RAW);
+        $mform->addRule('data', get_string('required'), 'required', null, 'client');
         $mform->addHelpButton('data', 'data', 'qtype_sqlquestion');
 
         // Field for entering the SQL check.
