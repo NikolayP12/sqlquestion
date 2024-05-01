@@ -12,7 +12,7 @@
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
+// along with Moodle. If not, see <https://www.gnu.org/licenses/>.
 
 /**
  * Plugin version and other meta-data are defined here.
@@ -25,7 +25,7 @@
 defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'qtype_sqlquestion';
-$plugin->release = '1.3.2';
+$plugin->release = '1.3.3';
 $plugin->version = 2024042600;
 $plugin->requires = 2022112800;
 $plugin->maturity = MATURITY_STABLE;
